@@ -1,0 +1,18 @@
+{
+  "accuracy": {
+    "mean": 1.0,
+    "std": 0.0
+  },
+  "f1": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "precision": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "recall": {
+    "mean": 0.0,
+    "std": 0.0
+  }
+}

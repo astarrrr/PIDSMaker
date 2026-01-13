@@ -1,0 +1,18 @@
+{
+  "dataset": "optc_h051",
+  "artifact_dir": "/home/artifacts",
+  "build_graphs_hash": "346bb6debf3dd1015a0b58f8639fd0505a70aab3f5df33424605d91d18dff75e",
+  "train_files": [
+    "graph_19",
+    "graph_20",
+    "graph_21"
+  ],
+  "val_files": [
+    "graph_22"
+  ],
+  "test_files": [
+    "graph_23",
+    "graph_24",
+    "graph_25"
+  ]
+}

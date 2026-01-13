@@ -1,0 +1,17 @@
+method: random
+count: 20
+
+metric:
+  name: val_score
+  goal: maximize
+parameters:
+  detection.gnn_training.lr:
+    values: [5e-6, 1e-5, 3e-5, 1e-4, 3e-4]
+  detection.gnn_training.weight_decay:
+    values: [0.0, 1e-6, 1e-5, 1e-4]
+  detection.gnn_training.node_out_dim:
+    values: [64, 96, 128, 160, 192]
+  detection.graph_preprocessing.context_k:
+    values: [1, 3, 5]
+  detection.gnn_training.encoder.dropout:
+    values: [0.0, 0.1, 0.3, 0.5]

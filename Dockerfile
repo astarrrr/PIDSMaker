@@ -1,4 +1,6 @@
+
 FROM ubuntu:22.04
+
 
 # setting up environment variables (timezone for postgresql)
 ENV DEBIAN_FRONTEND=noninteractive
@@ -18,10 +20,15 @@ ENV PATH=$JAVA_HOME/bin:$PATH
 # installing sudo
 RUN apt-get update && apt-get install -y sudo git
 
-# installing Anaconda version 23.3.1
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
-RUN bash Anaconda3-2023.03-1-Linux-x86_64.sh -b -p /opt/conda
-RUN rm Anaconda3-2023.03-1-Linux-x86_64.sh
+# installing Miniconda (Docker-safe replacement for Anaconda)
+ENV CONDA_DIR=/opt/conda
+RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh -O /tmp/miniconda.sh && \
+    bash /tmp/miniconda.sh -b -p $CONDA_DIR && \
+    rm /tmp/miniconda.sh && \
+    $CONDA_DIR/bin/conda clean -afy
+
+ENV PATH=$CONDA_DIR/bin:$PATH
+
 
 ARG USER_ID
 ARG GROUP_ID

@@ -11,3 +11,4 @@ from .rcaid_encoder import RCaidGAT
 from .sage import SAGE
 from .sum_aggregation import SumAggregation
 from .tgn_encoder import TGNEncoder
+from .custom_encoder import CustomEncoder

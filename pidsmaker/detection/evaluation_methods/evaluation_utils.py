@@ -370,6 +370,17 @@ def plot_scores_with_paths_edge_level(
 ):
     node_to_path = get_node_to_path_and_type(cfg)
     paths, types = [], []
+    def build_node_label(node):
+        path = node.get("path")
+        cmd = node.get("cmd")
+        path = None if path in (None, "None", "") else str(path)
+        cmd = None if cmd in (None, "None", "") else str(cmd)
+        if node.get("type") == "subject":
+            if path and cmd:
+                return f"{path}, {cmd}"
+            return path or cmd or "None"
+        return path or cmd or "None"
+
     # Prints the path if it exists, else tries to print the cmd line
     for src, dst, *_ in edges:
         src = int(src)
@@ -378,16 +389,8 @@ def plot_scores_with_paths_edge_level(
         dst_type = node_to_path[dst]["type"]
         types.append(src_type)
 
-        path_src = (
-            node_to_path[src]["path"] + ", " + node_to_path[src]["cmd"]
-            if src_type == "subject"
-            else node_to_path[src]["path"]
-        )
-        path_dst = (
-            node_to_path[dst]["path"] + ", " + node_to_path[dst]["cmd"]
-            if dst_type == "subject"
-            else node_to_path[dst]["path"]
-        )
+        path_src = build_node_label(node_to_path[src])
+        path_dst = build_node_label(node_to_path[dst])
         paths.append((path_src, path_dst))
 
     # Convert data to numpy arrays for easy manipulation

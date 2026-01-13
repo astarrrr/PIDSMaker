@@ -1,0 +1,8 @@
+# Velox with lightweight context embeddings (non-GNN)
+
+_include_yml: velox
+
+detection:
+  graph_preprocessing:
+    context_k: 3
+    context_agg: mean

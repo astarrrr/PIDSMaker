@@ -1,0 +1,21 @@
+{
+  "node_types": [
+    "file",
+    "netflow",
+    "subject",
+    "UNK"
+  ],
+  "edge_labels": [
+    "CREATE",
+    "DELETE",
+    "MESSAGE",
+    "MODIFY",
+    "OPEN",
+    "READ",
+    "RENAME",
+    "START",
+    "TERMINATE",
+    "WRITE",
+    "UNK"
+  ]
+}

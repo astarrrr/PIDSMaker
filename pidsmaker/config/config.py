@@ -343,6 +343,10 @@ FEATURIZATIONS_CFG = {
 }
 
 ENCODERS_CFG = {
+    "custom_encoder": {
+        "activation": Arg(str),
+        "num_layers": Arg(int),
+    },
     "tgn": {
         "tgn_memory_dim": Arg(int),
         "tgn_time_dim": Arg(int),
@@ -621,6 +625,15 @@ TASK_ARGS = {
                 desc="Edge features to used during GNN training. `edge_type` refers to the system call type, `edge_type_triplet` \
                                     considers a same edge type as a new type if source or destination node types are different, `msg` is the message vector \
                                     used in the TGN, `time_encoding` encodes temporal order of events with their timestamps in the TGN, `none` uses no features.",
+            ),
+            "context_k": Arg(
+                int,
+                desc="Number of recent incident edges per node to summarize for lightweight context.",
+            ),
+            "context_agg": Arg(
+                str,
+                vals=OR(["mean"]),
+                desc="Aggregation method for lightweight context summaries.",
             ),
             "multi_dataset_training": Arg(
                 bool, desc="Whether the GNN should be trained on all datasets in `multi_dataset`."

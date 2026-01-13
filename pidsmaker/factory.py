@@ -186,6 +186,22 @@ def encoder_factory(cfg, msg_dim, in_dim, device, max_node_num, graph_reindexer)
                 ),
                 is_decoder=False,
             )
+        elif method == "custom_encoder":
+            from pidsmaker.encoders import CustomEncoder  # or direct import at top
+
+            encoder = CustomEncoder(
+                in_dim=in_dim,
+                hid_dim=node_hid_dim,
+                out_dim=node_out_dim,
+                dropout=dropout,
+                graph_reindexer=graph_reindexer,
+                activation=activation_fn_factory(
+                    cfg.detection.gnn_training.encoder.custom_encoder.activation
+                ),
+                num_layers=cfg.detection.gnn_training.encoder.custom_encoder.num_layers,
+                device=device,
+            )
+                
 
         # MLP encoders
         elif method == "none":

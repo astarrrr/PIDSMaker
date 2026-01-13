@@ -231,6 +231,7 @@ def main(cfg, project=None, exp=None, sweep_id=None, **kwargs):
     else:
         log("Running pipeline in 'Tuning' mode.")
         sweep_config = get_tuning_sweep_cfg(cfg)
+        count = sweep_config.pop("count", None)
         if not sweep_id:
             sweep_config["name"] = exp
             sweep_id = wandb.sweep(sweep_config, project=project)
@@ -242,12 +243,10 @@ def main(cfg, project=None, exp=None, sweep_id=None, **kwargs):
                 cfg = fuse_cfg_with_sweep_cfg(cfg, sweep_cfg)
 
                 wandb.run.name = exp
-                wandb.run.save()
                 wandb.log({"dataset": cfg.dataset.name, "exp": exp})
 
                 run_pipeline_with_experiments(cfg)
 
-        count = sweep_config["count"] if "count" in sweep_config else None
         wandb.agent(sweep_id, lambda: run_pipeline_from_sweep(cfg), count=count)
 
     log("==" * 30)
