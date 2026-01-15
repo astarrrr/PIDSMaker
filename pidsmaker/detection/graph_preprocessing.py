@@ -10,7 +10,8 @@ from pidsmaker.utils.utils import get_device, log, log_start, set_seed
 def _get_context_cfg(cfg):
     context_k = getattr(cfg.detection.graph_preprocessing, "context_k", 0) or 0
     context_agg = getattr(cfg.detection.graph_preprocessing, "context_agg", "mean") or "mean"
-    return int(context_k), context_agg
+    context_mode = getattr(cfg.detection.graph_preprocessing, "context_mode", "per_edge") or "per_edge"
+    return int(context_k), context_agg, context_mode
 
 
 def _parse_selected_node_feats(cfg):
@@ -63,7 +64,7 @@ def _get_node_emb_slice(cfg, x_dim):
     return None
 
 
-def _build_context_embeddings(graph, context_k, emb_slice):
+def _build_context_embeddings(graph, context_k, emb_slice, context_mode):
     src = graph.src
     dst = graph.dst
     t = graph.t
@@ -75,34 +76,68 @@ def _build_context_embeddings(graph, context_k, emb_slice):
     dst_emb = x_dst[:, emb_start:emb_end]
     emb_dim = src_emb.shape[1]
 
-    max_node = int(torch.cat([src, dst]).max().item()) + 1
     zeros = torch.zeros((emb_dim,), dtype=src_emb.dtype, device=src_emb.device)
 
-    neighbor_lists = {}
-    order = torch.argsort(t)
-    for idx in order.tolist():
-        u = int(src[idx])
-        v = int(dst[idx])
+    if context_mode == "per_edge":
+        neighbor_lists = {}
+        order = torch.argsort(t)
+        num_edges = src.shape[0]
+        context_src = torch.zeros((num_edges, emb_dim), dtype=src_emb.dtype, device=src_emb.device)
+        context_dst = torch.zeros((num_edges, emb_dim), dtype=src_emb.dtype, device=src_emb.device)
 
-        u_list = neighbor_lists.setdefault(u, [])
-        u_list.append(dst_emb[idx])
-        if len(u_list) > context_k:
-            u_list.pop(0)
+        for idx in order.tolist():
+            u = int(src[idx])
+            v = int(dst[idx])
 
-        v_list = neighbor_lists.setdefault(v, [])
-        v_list.append(src_emb[idx])
-        if len(v_list) > context_k:
-            v_list.pop(0)
+            u_list = neighbor_lists.get(u, [])
+            if len(u_list) == 0:
+                context_src[idx] = zeros
+            else:
+                context_src[idx] = torch.stack(u_list, dim=0).mean(dim=0)
 
-    context_by_node = torch.zeros((max_node, emb_dim), dtype=src_emb.dtype, device=src_emb.device)
-    for node_id, emb_list in neighbor_lists.items():
-        if len(emb_list) == 0:
-            context_by_node[node_id] = zeros
-        else:
-            context_by_node[node_id] = torch.stack(emb_list, dim=0).mean(dim=0)
+            v_list = neighbor_lists.get(v, [])
+            if len(v_list) == 0:
+                context_dst[idx] = zeros
+            else:
+                context_dst[idx] = torch.stack(v_list, dim=0).mean(dim=0)
 
-    context_src = context_by_node[src]
-    context_dst = context_by_node[dst]
+            u_list = neighbor_lists.setdefault(u, [])
+            u_list.append(dst_emb[idx])
+            if len(u_list) > context_k:
+                u_list.pop(0)
+
+            v_list = neighbor_lists.setdefault(v, [])
+            v_list.append(src_emb[idx])
+            if len(v_list) > context_k:
+                v_list.pop(0)
+    else:
+        neighbor_lists = {}
+        order = torch.argsort(t)
+        for idx in order.tolist():
+            u = int(src[idx])
+            v = int(dst[idx])
+
+            u_list = neighbor_lists.setdefault(u, [])
+            u_list.append(dst_emb[idx])
+            if len(u_list) > context_k:
+                u_list.pop(0)
+
+            v_list = neighbor_lists.setdefault(v, [])
+            v_list.append(src_emb[idx])
+            if len(v_list) > context_k:
+                v_list.pop(0)
+
+        max_node = int(torch.cat([src, dst]).max().item()) + 1
+        context_by_node = torch.zeros((max_node, emb_dim), dtype=src_emb.dtype, device=src_emb.device)
+        for node_id, emb_list in neighbor_lists.items():
+            if len(emb_list) == 0:
+                context_by_node[node_id] = zeros
+            else:
+                context_by_node[node_id] = torch.stack(emb_list, dim=0).mean(dim=0)
+
+        context_src = context_by_node[src]
+        context_dst = context_by_node[dst]
+
     return context_src, context_dst
 
 
@@ -133,11 +168,13 @@ def _refresh_node_features(graph, x_is_tuple):
 
 
 def _apply_context_embeddings(datasets, cfg):
-    context_k, context_agg = _get_context_cfg(cfg)
+    context_k, context_agg, context_mode = _get_context_cfg(cfg)
     if context_k <= 0:
         return datasets
     if context_agg != "mean":
         raise ValueError(f"Invalid context_agg {context_agg}")
+    if context_mode not in {"per_edge", "final"}:
+        raise ValueError(f"Invalid context_mode {context_mode}")
     x_is_tuple = cfg.detection.gnn_training.encoder.x_is_tuple
 
     logged = False
@@ -163,7 +200,9 @@ def _apply_context_embeddings(datasets, cfg):
                 continue
 
             old_dim = graph.x_src.shape[1]
-            context_src, context_dst = _build_context_embeddings(graph, context_k, emb_slice)
+            context_src, context_dst = _build_context_embeddings(
+                graph, context_k, emb_slice, context_mode
+            )
 
             graph.x_src = torch.cat(
                 [graph.x_src[:, :emb_end], context_src, graph.x_src[:, emb_end:]], dim=-1
@@ -177,7 +216,8 @@ def _apply_context_embeddings(datasets, cfg):
 
             if not logged:
                 log(
-                    f"Applied context embeddings (k={context_k}, agg={context_agg}); "
+                    f"Applied context embeddings (k={context_k}, agg={context_agg}, "
+                    f"mode={context_mode}); "
                     f"x_dim: {old_dim} -> {graph.x_src.shape[1]}"
                 )
                 logged = True

@@ -635,6 +635,11 @@ TASK_ARGS = {
                 vals=OR(["mean"]),
                 desc="Aggregation method for lightweight context summaries.",
             ),
+            "context_mode": Arg(
+                str,
+                vals=OR(["per_edge", "final"]),
+                desc="Context timing: per-edge temporal context or final per-node summary.",
+            ),
             "multi_dataset_training": Arg(
                 bool, desc="Whether the GNN should be trained on all datasets in `multi_dataset`."
             ),

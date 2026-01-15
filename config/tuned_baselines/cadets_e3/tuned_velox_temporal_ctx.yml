@@ -1,0 +1,11 @@
+# ADP@1.00 => https://wandb.ai/tristan_research/framework_tuning_amalgame_linear/sweeps/sn5jag2w/table?nw=nwusertristanbilot
+
+featurization:
+  feat_training:
+    emb_dim: 64
+    # use_seed: True
+
+detection:
+  gnn_training:
+    lr: 0.001
+    node_out_dim: 256

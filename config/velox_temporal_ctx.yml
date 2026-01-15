@@ -1,4 +1,4 @@
-# Velox with lightweight context embeddings (non-GNN)
+# Velox with per-edge temporal context embeddings (non-GNN)
 
 _include_yml: velox
 
@@ -6,4 +6,4 @@ detection:
   graph_preprocessing:
     context_k: 3
     context_agg: mean
-    context_mode: final
+    context_mode: per_edge
