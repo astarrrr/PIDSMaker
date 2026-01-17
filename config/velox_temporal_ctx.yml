@@ -4,6 +4,6 @@ _include_yml: velox
 
 detection:
   graph_preprocessing:
-    context_k: 3
+    context_k: 10
     context_agg: mean
     context_mode: per_edge
