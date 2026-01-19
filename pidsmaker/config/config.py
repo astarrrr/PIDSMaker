@@ -725,6 +725,7 @@ TASK_ARGS = {
         },
         "gnn_training": {
             "use_seed": Arg(bool),
+            "seed": Arg(int, desc="Random seed used when `use_seed` is true."),
             "deterministic": Arg(
                 bool, desc="Whether to force PyTorch to use deterministic algorithms."
             ),

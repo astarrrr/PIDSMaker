@@ -676,7 +676,7 @@ def log_dataset_stats(datasets):
 
 def set_seed(cfg):
     if cfg.detection.gnn_training.use_seed:
-        seed = 0
+        seed = cfg.detection.gnn_training.seed or 0
         random.seed(seed)
         np.random.seed(seed)
 
