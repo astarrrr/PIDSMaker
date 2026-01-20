@@ -438,7 +438,7 @@ DECODERS_CFG = {
     "none": {},
 }
 
-RECON_LOSSES = ["SCE", "MSE", "MSE_sum", "MAE", "none"]
+RECON_LOSSES = ["SCE", "MSE", "MSE_sum", "MAE", "none", "l2", "L2"]
 PRED_LOSSES = ["cross_entropy", "BCE"]
 OBJECTIVES_NODE_LEVEL = [
     "predict_node_type",
