@@ -57,6 +57,8 @@ RUN pip install torch_geometric==2.5.3 --no-cache-dir && \
                 torch_cluster==1.6.1 torch_spline_conv==1.2.2 \
                 -f https://data.pyg.org/whl/torch-1.13.0+cu117.html --no-cache-dir
 
+RUN pip install geoopt==0.5.0
+
 RUN pip install gensim==4.3.1 pytz==2024.1 pandas==2.2.2 yacs==0.1.8
 
 RUN pip uninstall -y scipy && pip install scipy==1.10.1 && \

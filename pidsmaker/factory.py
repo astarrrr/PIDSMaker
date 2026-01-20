@@ -136,6 +136,29 @@ def encoder_factory(cfg, msg_dim, in_dim, device, max_node_num, graph_reindexer)
                 activation=activation_fn_factory(cfg.detection.gnn_training.encoder.gin.activation),
                 num_layers=cfg.detection.gnn_training.encoder.gin.num_layers,
             )
+        elif method == "hypformer":
+            encoder = HypformerEncoder(
+                in_dim=in_dim,
+                hid_dim=node_hid_dim,
+                out_dim=node_out_dim,
+                dropout=dropout,
+                trans_num_layers=cfg.detection.gnn_training.encoder.hypformer.trans_num_layers,
+                trans_num_heads=cfg.detection.gnn_training.encoder.hypformer.trans_num_heads,
+                trans_use_bn=cfg.detection.gnn_training.encoder.hypformer.trans_use_bn,
+                trans_use_residual=cfg.detection.gnn_training.encoder.hypformer.trans_use_residual,
+                trans_use_weight=cfg.detection.gnn_training.encoder.hypformer.trans_use_weight,
+                trans_use_act=cfg.detection.gnn_training.encoder.hypformer.trans_use_act,
+                k_in=cfg.detection.gnn_training.encoder.hypformer.k_in,
+                k_out=cfg.detection.gnn_training.encoder.hypformer.k_out,
+                decoder_type=cfg.detection.gnn_training.encoder.hypformer.decoder_type,
+                add_positional_encoding=cfg.detection.gnn_training.encoder.hypformer.add_positional_encoding,
+                attention_type=cfg.detection.gnn_training.encoder.hypformer.attention_type,
+                power_k=cfg.detection.gnn_training.encoder.hypformer.power_k,
+                trans_heads_concat=cfg.detection.gnn_training.encoder.hypformer.trans_heads_concat,
+                graph_reindexer=graph_reindexer,
+                x_is_tuple=cfg.detection.gnn_training.encoder.x_is_tuple,
+                device=device,
+            )
         elif method == "sum_aggregation":
             encoder = SumAggregation(
                 in_dim=in_dim,

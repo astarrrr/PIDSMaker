@@ -1,0 +1,6 @@
+_include_yml: default
+
+detection:
+  gnn_training:
+    encoder:
+      used_methods: hypformer

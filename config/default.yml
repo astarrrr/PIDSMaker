@@ -84,6 +84,20 @@ detection:
       gin:
         activation: relu
         num_layers: 2
+      hypformer:
+        trans_num_layers: 2
+        trans_num_heads: 4
+        trans_use_bn: True
+        trans_use_residual: True
+        trans_use_weight: True
+        trans_use_act: True
+        k_in: 1.0
+        k_out: 1.0
+        decoder_type: hyp
+        add_positional_encoding: True
+        attention_type: full
+        power_k: 2
+        trans_heads_concat: False
       magic_gat:
         num_layers: 3
         num_heads: 4
