@@ -8,6 +8,8 @@ class NodeFeatReconstruction(nn.Module):
         self.loss_fn = loss_fn
 
     def forward(self, h, x, inference, **kwargs):
+        if isinstance(x, (tuple, list)):
+            x = 0.5 * (x[0] + x[1])
         x_hat = self.decoder(h)
         loss = self.loss_fn(x_hat, x, inference=inference)
         return {"loss": loss}
