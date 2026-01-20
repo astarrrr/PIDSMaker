@@ -25,7 +25,10 @@ def standard_evaluation(cfg, evaluation_fn):
     best_metrics = {
         "adp_score": float("-inf"),
         "discrimination": float("-inf"),
-        "best_stats": None,
+        "fscore": float("-inf"),
+        "auc": float("-inf"),
+        "ap": float("-inf"),
+        "stats": None,
     }
 
     sorted_files = (
@@ -101,12 +104,21 @@ def best_metric_pick_best_epoch(stats, best_metrics, cfg):
     elif best_model_selection == "best_discrimination":
         condition = stats["discrimination"] > best_metrics["discrimination"]
 
+    elif best_model_selection in ["best_f1", "best_fscore"]:
+        condition = stats["fscore"] > best_metrics["fscore"]
+    elif best_model_selection == "best_auc":
+        condition = stats["auc"] > best_metrics["auc"]
+    elif best_model_selection == "best_ap":
+        condition = stats["ap"] > best_metrics["ap"]
     else:
         raise ValueError(f"Invalid best model selection {best_model_selection}")
 
     if condition:
         best_metrics["adp_score"] = stats["adp_score"]
         best_metrics["discrimination"] = stats["discrimination"]
+        best_metrics["fscore"] = stats["fscore"]
+        best_metrics["auc"] = stats["auc"]
+        best_metrics["ap"] = stats["ap"]
         best_metrics["stats"] = stats
     return best_metrics
 

@@ -797,9 +797,12 @@ TASK_ARGS = {
             "ground_truth_version": Arg(str, vals=OR(["orthrus", "reapr"])),
             "best_model_selection": Arg(
                 str,
-                vals=OR(["best_adp", "best_discrimination"]),
+                vals=OR(
+                    ["best_adp", "best_discrimination", "best_f1", "best_fscore", "best_auc", "best_ap"]
+                ),
                 desc="Strategy to select the best model across epochs. `best_adp` selects the best model based on the highest ADP score, `best_discrimination` \
-                                        selects the model that does the best separation between top-score TPs and top-score FPs.",
+                                        selects the model that does the best separation between top-score TPs and top-score FPs. \
+                                        `best_f1`/`best_fscore`, `best_auc`, and `best_ap` use classifier metrics.",
             ),
             "used_method": Arg(str),
             "node_evaluation": {
