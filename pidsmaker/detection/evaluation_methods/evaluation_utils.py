@@ -129,6 +129,7 @@ def reduce_losses_to_score(losses: list[float], threshold_method: str):
         or threshold_method == "threatrace"
         or threshold_method == "flash"
         or threshold_method == "nodlink"
+        or threshold_method == "top_k"
     ):
         return np.max(losses)
     raise ValueError(f"Invalid threshold method {threshold_method}")

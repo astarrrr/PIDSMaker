@@ -552,7 +552,7 @@ def edge_decoder_factory(edge_decoder, in_dim):
 def recon_loss_fn_factory(loss: str):
     if loss == "SCE":
         return sce_loss
-    if loss == "MSE":
+    if loss in ["MSE", "l2", "L2"]:
         return mse_loss
     if loss == "MSE_sum":
         return mse_loss_sum

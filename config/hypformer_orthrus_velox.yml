@@ -3,7 +3,7 @@ preprocessing:
     used_method: default
     use_all_files: True
     mimicry_edge_num: 0
-    time_window_size: 60.0
+    time_window_size: 15.0
     use_hashed_label: False
     fuse_edge: True
     node_label_features:
@@ -78,12 +78,13 @@ detection:
         power_k: 2
         trans_heads_concat: False
     decoder:
-      used_methods: reconstruct_node_features
-      reconstruct_node_features:
-        loss: MSE
+      used_methods: reconstruct_masked_features
+      reconstruct_masked_features:
+        mask_rate: 0.5
+        loss: l2
         decoder: node_mlp
         node_mlp:
-          architecture_str: none
+          architecture_str: linear | relu
       use_few_shot: False
 
   evaluation:
@@ -92,7 +93,8 @@ detection:
     best_model_selection: best_adp
     used_method: node_evaluation
     node_evaluation:
-      threshold_method: max_val_loss
-      use_dst_node_loss: True
+      threshold_method: top_k
+      top_k: 1000.0
+      use_dst_node_loss: False
       use_kmeans: False
       kmeans_top_K: 30

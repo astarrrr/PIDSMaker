@@ -533,7 +533,15 @@ SYNTHETIC_ATTACKS = {
     },
 }
 
-THRESHOLD_METHODS = ["max_val_loss", "mean_val_loss", "threatrace", "magic", "flash", "nodlink"]
+THRESHOLD_METHODS = [
+    "max_val_loss",
+    "mean_val_loss",
+    "threatrace",
+    "magic",
+    "flash",
+    "nodlink",
+    "top_k",
+]
 
 # --- Tasks, subtasks, and argument configurations ---
 TASK_ARGS = {
@@ -810,6 +818,10 @@ TASK_ARGS = {
                     str,
                     vals=OR(THRESHOLD_METHODS),
                     desc="Method to calculate the threshold value used to detect anomalies.",
+                ),
+                "top_k": Arg(
+                    float,
+                    desc="Top-k node ratio (0<k<1) or absolute count (k>=1) when using `top_k`.",
                 ),
                 "use_dst_node_loss": Arg(
                     bool,
