@@ -197,7 +197,7 @@ def get_attack_to_mal_edges(cfg) -> dict[list]:
                 condition = dst_idx_id in ground_truth_nids
             elif malicious_edge_selection == "both_nodes":
                 condition = src_idx_id in ground_truth_nids and dst_idx_id in ground_truth_nids
-            elif malicious_edge_selection == "either_node":
+            elif malicious_edge_selection in ["either_node", "edge"]:
                 condition = src_idx_id in ground_truth_nids or dst_idx_id in ground_truth_nids
             else:
                 raise ValueError(

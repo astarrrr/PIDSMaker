@@ -857,10 +857,11 @@ TASK_ARGS = {
             "edge_evaluation": {
                 "malicious_edge_selection": Arg(
                     str,
-                    vals=OR(["src_node", "dst_node", "both_nodes"]),
+                    vals=OR(["src_node", "dst_node", "both_nodes", "either_node", "edge"]),
                     desc="The ground truth only contains node-level labels. \
                     This arg controls the strategy to label edges. `src_nodes` and `dst_nodes` consider an edge as malicious if only its source or only its destination \
-                    node is malicious. `both` labels an edge as malicious if both end nodes are malicious.",
+                    node is malicious. `both` labels an edge as malicious if both end nodes are malicious. `either_node` labels an edge as malicious if either endpoint \
+                    is malicious. `edge` is an alias for `either_node` when edge-level ground truth is unavailable.",
                 ),
                 "threshold_method": Arg(str, vals=OR(THRESHOLD_METHODS)),
             },

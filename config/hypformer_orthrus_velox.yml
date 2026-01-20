@@ -78,20 +78,21 @@ detection:
         power_k: 2
         trans_heads_concat: False
     decoder:
-      used_methods: predict_edge_type
-      predict_edge_type:
-        decoder: edge_mlp
-        use_triplet_types: False
-        edge_mlp:
-          architecture_str: linear(0.5) | relu
-          src_dst_projection_coef: 2
+      used_methods: reconstruct_node_features
+      reconstruct_node_features:
+        loss: MSE
+        decoder: node_mlp
+        node_mlp:
+          architecture_str: none
       use_few_shot: False
 
   evaluation:
     viz_malicious_nodes: False
     ground_truth_version: orthrus
-    best_model_selection: best_f1
-    used_method: edge_evaluation
-    edge_evaluation:
-      malicious_edge_selection: edge
+    best_model_selection: best_adp
+    used_method: node_evaluation
+    node_evaluation:
       threshold_method: max_val_loss
+      use_dst_node_loss: True
+      use_kmeans: False
+      kmeans_top_K: 30
