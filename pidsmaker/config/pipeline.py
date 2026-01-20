@@ -537,8 +537,7 @@ def check_edge_cases(cfg):
                 )
 
     if "reconstruct_masked_features" in decoders or "predict_masked_struct" in decoders:
-        if cfg.detection.evaluation.node_evaluation.threshold_method != "magic":
-            raise ValueError("These decoders are only working with magic thresholding yet.")
+        pass
 
     if cfg.detection.gnn_training.decoder.use_few_shot:
         if cfg.preprocessing.transformation.used_methods not in SYNTHETIC_ATTACKS.keys():
