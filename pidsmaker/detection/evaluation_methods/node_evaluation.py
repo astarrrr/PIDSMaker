@@ -122,11 +122,14 @@ def get_node_predictions_node_level(val_tw_path, test_tw_path, cfg, **kwargs):
     log(f"Loading data from {test_tw_path}...")
 
     threshold_method = cfg.detection.evaluation.node_evaluation.threshold_method
-    if threshold_method == "magic":
+    if threshold_method == "top_k":
+        thr = None
+    elif threshold_method == "magic":
         thr = get_threshold(test_tw_path, threshold_method)
     else:
         thr = get_threshold(val_tw_path, threshold_method)
-    log(f"Threshold: {thr:.3f}")
+    if thr is not None:
+        log(f"Threshold: {thr:.3f}")
 
     node_to_values = defaultdict(lambda: defaultdict(list))
     node_to_max_loss_tw = {}
@@ -225,7 +228,7 @@ def get_node_predictions_node_level(val_tw_path, test_tw_path, cfg, **kwargs):
         else:
             results[node_id]["time_range"] = None
 
-        if use_kmeans:  # in this mode, we add the label after
+        if use_kmeans or threshold_method == "top_k":  # labels added after
             results[node_id]["y_hat"] = 0
         else:
             if cfg.detection.evaluation.node_evaluation.threshold_method == "threatrace":
@@ -240,6 +243,16 @@ def get_node_predictions_node_level(val_tw_path, test_tw_path, cfg, **kwargs):
             results,
             topk_K=cfg.detection.evaluation.node_evaluation.kmeans_top_K,
         )
+    elif threshold_method == "top_k":
+        top_k = cfg.detection.evaluation.node_evaluation.top_k
+        if top_k is None or top_k <= 0:
+            raise ValueError("`node_evaluation.top_k` must be > 0 when using `top_k`.")
+        total = len(results)
+        k_count = int(total * top_k) if 0 < top_k < 1 else int(top_k)
+        k_count = max(1, min(total, k_count))
+        ranked = sorted(results.items(), key=lambda item: item[1]["score"], reverse=True)
+        for node_id, _ in ranked[:k_count]:
+            results[node_id]["y_hat"] = 1
     return results, thr
 
 

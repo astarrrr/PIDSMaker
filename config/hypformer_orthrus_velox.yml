@@ -93,8 +93,7 @@ detection:
     best_model_selection: best_adp
     used_method: node_evaluation
     node_evaluation:
-      threshold_method: top_k
-      top_k: 1000.0
+      threshold_method: max_val_loss
       use_dst_node_loss: False
       use_kmeans: False
       kmeans_top_K: 30
