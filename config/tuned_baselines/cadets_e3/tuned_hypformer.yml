@@ -1,0 +1,20 @@
+# =========================
+# HypFormer Tuned Config
+# Dataset: CADETS_E3
+# =========================
+
+preprocessing:
+  build_graphs:
+    time_window_size: 3.0     # CADETS 上更短时间窗 → 更高 ADP
+
+
+detection:
+  gnn_training:
+    lr: 0.0005
+    weight_decay: 0.00001
+
+    node_hid_dim: 256
+    node_out_dim: 320
+
+    encoder:
+      dropout: 0.5            # CADETS 上需要更强正则

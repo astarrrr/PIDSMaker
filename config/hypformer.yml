@@ -1,6 +1,109 @@
-_include_yml: default
+# =========================
+# HypFormer Base Config
+# =========================
+
+preprocessing:
+  build_graphs:
+    used_method: default
+    use_all_files: True
+    mimicry_edge_num: 0
+    time_window_size: 15.0        # 基础时间窗（不是 tuned 最优）
+    use_hashed_label: False
+    fuse_edge: True
+    node_label_features:
+      subject: type, path, cmd_line
+      file: type, path
+      netflow: type, remote_ip, remote_port
+    multi_dataset: none
+
+  transformation:
+    used_methods: none
+
+
+featurization:
+  feat_training:
+    emb_dim: 128
+    epochs: 50
+    training_split: train
+    use_seed: True
+    used_method: word2vec
+
+  feat_inference:
+    to_remove: True
+
 
 detection:
+  graph_preprocessing:
+    save_on_disk: False
+    node_features: node_emb,node_type
+    edge_features: edge_type
+    fix_buggy_graph_reindexer: False
+
+    global_batching:
+      used_method: none
+
+    intra_graph_batching:
+      used_methods: edges
+      edges:
+        intra_graph_batch_size: 1024
+
+    inter_graph_batching:
+      used_method: none
+
+
   gnn_training:
+    used_method: default
+    use_seed: True
+    deterministic: False
+    num_epochs: 12
+    patience: 3
+    grad_accumulation: 1
+
+    # === Encoder 定义（核心方法）===
     encoder:
       used_methods: hypformer
+      x_is_tuple: True
+      dropout: 0.3        # 基础正则强度（不是 tuned）
+
+      hypformer:
+        trans_num_layers: 2
+        trans_num_heads: 4
+        trans_use_bn: True
+        trans_use_residual: True
+        trans_use_weight: True
+        trans_use_act: True
+        attention_type: full
+        power_k: 2
+        trans_heads_concat: False
+
+        # 双曲空间设定（方法核心）
+        k_in: 1.0
+        k_out: 1.0
+        decoder_type: hyp
+        add_positional_encoding: False
+
+
+    # === 训练目标（与 Orthrus 对齐）===
+    decoder:
+      used_methods: predict_edge_type
+      predict_edge_type:
+        decoder: edge_mlp
+        use_triplet_types: False
+        edge_mlp:
+          architecture_str: linear(0.5) | relu
+          src_dst_projection_coef: 2
+
+      use_few_shot: False
+
+
+  evaluation:
+    viz_malicious_nodes: False
+    ground_truth_version: orthrus
+    best_model_selection: best_adp
+    used_method: node_evaluation
+
+    node_evaluation:
+      threshold_method: top_k
+      top_k: 1000.0
+      use_dst_node_loss: True
+      use_kmeans: False

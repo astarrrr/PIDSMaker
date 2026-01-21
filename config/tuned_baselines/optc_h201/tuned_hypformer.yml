@@ -1,0 +1,33 @@
+# =========================
+# HypFormer tuned config
+# Dataset: OPTC_H201
+# =========================
+
+preprocessing:
+  build_graphs:
+    time_window_size: 3.0
+    # 比 Orthrus (5.0) 更短
+    # 避免双曲注意力跨太长时间造成过平滑
+
+
+featurization:
+  feat_training:
+    emb_dim: 64
+    # 对齐 Velox：降低初始文本噪声
+
+
+detection:
+  gnn_training:
+    lr: 0.0002
+    # 介于 Orthrus (1e-4) 和 Velox (1e-3) 之间
+    # HypFormer 对 lr 更敏感，不宜过大
+
+    node_hid_dim: 64
+    node_out_dim: 192
+    # 关键点：out_dim > hid_dim
+    # 拉开 anomaly score 的尾部分布 → 提升 ADP
+
+    encoder:
+      dropout: 0.5
+      # 必须比 Orthrus 大
+      # 抑制双曲空间下的“正常节点尾部泛滥”
