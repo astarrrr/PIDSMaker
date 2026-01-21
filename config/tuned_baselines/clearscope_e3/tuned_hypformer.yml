@@ -1,0 +1,33 @@
+# =========================
+# HypFormer tuned config
+# Dataset: CLEAR-SCOPE_E3
+# =========================
+
+preprocessing:
+  build_graphs:
+    time_window_size: 1.0
+    # 与 Orthrus / Velox / NodLink 完全对齐
+    # CLEAR-SCOPE 攻击是瞬态行为
+
+
+featurization:
+  feat_training:
+    emb_dim: 128
+    # 对齐 Velox
+    # 文本语义在 CLEAR-SCOPE 仍然重要
+
+
+detection:
+  gnn_training:
+    lr: 0.0001
+    # 三个 baseline 的共同最优点
+
+    node_hid_dim: 64
+    node_out_dim: 128
+    # 比 Orthrus 稍强
+    # 但明显弱于 CADETS / OPTC
+
+    encoder:
+      dropout: 0.2
+      # 介于 Orthrus (0.1) 与 NodLink (0.2)
+      # HypFormer 不能再低，但也不能高
