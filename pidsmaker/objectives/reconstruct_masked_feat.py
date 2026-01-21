@@ -15,6 +15,8 @@ class GMAEFeatReconstruction(nn.Module):
         return mask_token
 
     def forward(self, x, h, edge_index, inference, **kwargs):
+        if isinstance(x, (tuple, list)):
+            x = 0.5 * (x[0] + x[1])
         mask_rate = self.mask_rate
         num_nodes = x.shape[0]
         num_mask_nodes = int(mask_rate * num_nodes)
@@ -29,7 +31,7 @@ class GMAEFeatReconstruction(nn.Module):
         x_masked = x.clone()
         x_masked[mask_nodes] = mask_token.to(x.device)
 
-        recon = self.decoder(h, edge_index)
+        recon = self.decoder(h)
 
         x_init = x[mask_nodes].to(h.device)
         x_rec = recon[mask_nodes].to(h.device)
