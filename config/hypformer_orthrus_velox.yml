@@ -78,13 +78,13 @@ detection:
         power_k: 2
         trans_heads_concat: False
     decoder:
-      used_methods: reconstruct_masked_features
-      reconstruct_masked_features:
-        mask_rate: 0.5
-        loss: l2
-        decoder: node_mlp
-        node_mlp:
-          architecture_str: linear(1) | relu
+      used_methods: predict_edge_type
+      predict_edge_type:
+        decoder: edge_mlp
+        use_triplet_types: False
+        edge_mlp:
+          architecture_str: linear(0.5) | relu
+          src_dst_projection_coef: 2
       use_few_shot: False
 
   evaluation:
@@ -93,7 +93,8 @@ detection:
     best_model_selection: best_adp
     used_method: node_evaluation
     node_evaluation:
-      threshold_method: max_val_loss
-      use_dst_node_loss: False
+      threshold_method: top_k
+      top_k: 1000.0
+      use_dst_node_loss: True
       use_kmeans: False
       kmeans_top_K: 30
