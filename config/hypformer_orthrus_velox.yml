@@ -84,7 +84,7 @@ detection:
         loss: l2
         decoder: node_mlp
         node_mlp:
-          architecture_str: linear | relu
+          architecture_str: linear(1) | relu
       use_few_shot: False
 
   evaluation:
