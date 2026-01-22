@@ -116,7 +116,6 @@ detection:
     used_method: node_evaluation
 
     node_evaluation:
-      threshold_method: top_k
-      top_k: 1000.0
+      threshold_method: max_val_loss
       use_dst_node_loss: True
       use_kmeans: False
