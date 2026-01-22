@@ -1,0 +1,35 @@
+# =========================
+# HypFormer tuned config
+# Dataset: OPTC_H051
+# =========================
+
+preprocessing:
+  build_graphs:
+    time_window_size: 1.0
+    # 比 Orthrus (5.0) 短很多
+    # 但比 Velox (0.5) 稍长
+    # 防止双曲注意力在超短窗内完全退化
+
+
+featurization:
+  feat_training:
+    emb_dim: 128
+    # 与 Velox 对齐
+    # OPTC_H051 的命令/路径语义仍然重要
+
+
+detection:
+  gnn_training:
+    lr: 0.0003
+    # 介于 Orthrus (1e-4) 和 Velox (1e-3)
+    # HypFormer 不稳定，不能直接用 1e-3
+
+    node_hid_dim: 64
+    node_out_dim: 128
+    # 模型容量必须小
+    # 但 out_dim > hid_dim 以保证 ADP
+
+    encoder:
+      dropout: 0.4
+      # 高于 Orthrus / Velox
+      # 防止正常节点尾部占满
