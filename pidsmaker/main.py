@@ -46,6 +46,23 @@ from pidsmaker.triage import (
 from pidsmaker.utils.utils import log, remove_underscore_keys, set_seed
 
 
+def format_wandb_run_name(base_name, cfg):
+    time_window = cfg.preprocessing.build_graphs.time_window_size
+    time_window_str = f"{time_window:g}".replace(".", "p")
+    eval_method = cfg.detection.evaluation.used_method.strip()
+    if eval_method == "node_evaluation":
+        threshold = cfg.detection.evaluation.node_evaluation.threshold_method
+    elif eval_method == "edge_evaluation":
+        threshold = cfg.detection.evaluation.edge_evaluation.threshold_method
+    elif eval_method == "tw_evaluation":
+        threshold = cfg.detection.evaluation.tw_evaluation.threshold_method
+    elif eval_method == "node_tw_evaluation":
+        threshold = cfg.detection.evaluation.node_tw_evaluation.threshold_method
+    else:
+        threshold = "na"
+    return f"{base_name}_tw{time_window_str}_thr{threshold}"
+
+
 def get_task_to_module(cfg):
     return {
         "build_graphs": {
@@ -242,7 +259,7 @@ def main(cfg, project=None, exp=None, sweep_id=None, **kwargs):
                 sweep_cfg = wandb.config
                 cfg = fuse_cfg_with_sweep_cfg(cfg, sweep_cfg)
 
-                wandb.run.name = exp
+                wandb.run.name = format_wandb_run_name(exp, cfg)
                 wandb.log({"dataset": cfg.dataset.name, "exp": exp})
 
                 run_pipeline_with_experiments(cfg)
@@ -276,6 +293,8 @@ if __name__ == "__main__":
 
     cfg = get_yml_cfg(args)
     wandb.config.update(clean_cfg_for_log(cfg))
+    if wandb.run is not None:
+        wandb.run.name = format_wandb_run_name(exp_name, cfg)
 
     main(cfg, project=args.project, exp=exp_name, sweep_id=args.sweep_id)
 

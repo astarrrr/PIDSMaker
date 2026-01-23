@@ -1,0 +1,23 @@
+
+
+preprocessing:
+  build_graphs:
+    # ADP 最敏感参数之一：控制攻击节点是否被“压扁”
+    time_window_size: 5.0
+
+
+detection:
+  gnn_training:
+    # === 1. 学习率：必须提高 ===
+    # ADP ≠ loss 收敛，ADP 需要 ranking variance
+    lr: 0.0005
+
+    # === 2. 维度：扩大 tail separation ===
+    # node_out_dim 对 score tail 非常关键
+    node_hid_dim: 256
+    node_out_dim: 320
+
+    # === 3. 正则：为 ADP 而不是 precision ===
+    # 允许分数“发散”，不要过度收敛
+    encoder:
+      dropout: 0.5
