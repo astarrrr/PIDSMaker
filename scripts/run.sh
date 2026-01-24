@@ -30,3 +30,6 @@ fi
 
 # Execute the Python script with the passed arguments
 PYTHONHASHSEED=0 nohup python "${REPO_DIR}/pidsmaker/main.py" $args --wandb &
+
+
+
