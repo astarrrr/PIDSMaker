@@ -53,7 +53,7 @@ class TransConvLayer(nn.Module):
         norm_x_p = torch.norm(x ** p, p=2, dim=-1, keepdim=True)
         return (norm_x / norm_x_p) * x ** p
 
-    def full_attention(self, qs, ks, vs, output_attn=False):
+    def full_attention(self, qs, ks, vs, attention_mask=None, output_attn=False):
         # normalize input
         # qs = HypNormalization(self.manifold)(qs)
         # ks = HypNormalization(self.manifold)(ks)
@@ -61,6 +61,11 @@ class TransConvLayer(nn.Module):
         # negative squared distance (less than 0)
         att_weight = 2 + 2 * self.manifold.cinner(qs.transpose(0, 1), ks.transpose(0, 1))  # [H, N, N]
         att_weight = att_weight / self.scale + self.bias  # [H, N, N]
+        if attention_mask is not None:
+            if attention_mask.dim() == 2:
+                attention_mask = attention_mask.unsqueeze(0)
+            min_val = torch.finfo(att_weight.dtype).min
+            att_weight = att_weight.masked_fill(~attention_mask, min_val)
 
         att_weight = nn.Softmax(dim=-1)(att_weight)  # [H, N, N]
         att_output = self.manifold.mid_point(vs.transpose(0, 1), att_weight)  # [N, H, D]
@@ -112,7 +117,15 @@ class TransConvLayer(nn.Module):
             else:
                 return attn_output
 
-    def forward(self, query_input, source_input, edge_index=None, edge_weight=None, output_attn=False):
+    def forward(
+        self,
+        query_input,
+        source_input,
+        edge_index=None,
+        edge_weight=None,
+        attention_mask=None,
+        output_attn=False,
+    ):
         # feature transformation
         q_list = []
         k_list = []
@@ -135,7 +148,7 @@ class TransConvLayer(nn.Module):
                     query, key, value, output_attn)  # [N, H, D]
             elif self.attention_type == 'full':
                 attention_output, attn = self.full_attention(
-                    query, key, value, output_attn)
+                    query, key, value, attention_mask=attention_mask, output_attn=output_attn)
             else:
                 raise NotImplementedError
         else:
@@ -144,7 +157,7 @@ class TransConvLayer(nn.Module):
                     query, key, value)  # [N, H, D]
             elif self.attention_type == 'full':
                 attention_output = self.full_attention(
-                    query, key, value)
+                    query, key, value, attention_mask=attention_mask)
             else:
                 raise NotImplementedError
 
@@ -198,7 +211,7 @@ class TransConv(nn.Module):
 
         self.fcs.append(HypLinear(self.manifold_hidden, self.hidden_channels, self.hidden_channels, self.manifold_out))
 
-    def forward(self, x_input):
+    def forward(self, x_input, attention_mask=None):
         layer_ = []
 
         # the original inputs are in Euclidean
@@ -216,7 +229,7 @@ class TransConv(nn.Module):
         layer_.append(x)
 
         for i, conv in enumerate(self.convs):
-            x = conv(x, x)
+            x = conv(x, x, attention_mask=attention_mask)
             if self.residual:
                 x = self.manifold_hidden.mid_point(torch.stack((x, layer_[i]), dim=1))
             if self.use_bn:
@@ -229,7 +242,7 @@ class TransConv(nn.Module):
         x = self.fcs[-1](x)
         return x
 
-    def get_attentions(self, x):
+    def get_attentions(self, x, attention_mask=None):
         layer_, attentions = [], []
         x = self.fcs[0](x)
         if self.use_bn:
@@ -237,7 +250,7 @@ class TransConv(nn.Module):
         x = self.activation(x)
         layer_.append(x)
         for i, conv in enumerate(self.convs):
-            x, attn = conv(x, x, output_attn=True)
+            x, attn = conv(x, x, attention_mask=attention_mask, output_attn=True)
             attentions.append(attn)
             if self.residual:
                 x = self.manifold_hidden.mid_point(torch.stack((x, layer_[i]), dim=1))
@@ -296,8 +309,8 @@ class HypFormer(nn.Module):
         else:
             raise NotImplementedError
 
-    def forward(self, x):
-        x1 = self.trans_conv(x)
+    def forward(self, x, attention_mask=None):
+        x1 = self.trans_conv(x, attention_mask=attention_mask)
         if self.decoder_type == 'euc':
             x = self.decode_trans(self.manifold_out.logmap0(x1)[..., 1:])
         elif self.decoder_type == 'hyp':
@@ -306,8 +319,8 @@ class HypFormer(nn.Module):
             raise NotImplementedError
         return x
 
-    def get_attentions(self, x):
-        attns = self.trans_conv.get_attentions(x)  # [layer num, N, N]
+    def get_attentions(self, x, attention_mask=None):
+        attns = self.trans_conv.get_attentions(x, attention_mask=attention_mask)  # [layer num, N, N]
         return attns
 
     def reset_parameters(self):

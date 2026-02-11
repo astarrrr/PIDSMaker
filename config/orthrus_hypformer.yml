@@ -1,0 +1,22 @@
+_include_yml: orthrus
+
+detection:
+  gnn_training:
+    encoder:
+      used_methods: tgn,hypformer
+      x_is_tuple: True
+      hypformer:
+        trans_num_layers: 2
+        trans_num_heads: 4
+        trans_use_bn: True
+        trans_use_residual: True
+        trans_use_weight: True
+        trans_use_act: True
+        attention_type: full
+        power_k: 2
+        trans_heads_concat: False
+        k_in: 1.0
+        k_out: 1.0
+        decoder_type: euc
+        add_positional_encoding: False
+        use_edge_index_mask: True

@@ -155,6 +155,9 @@ def encoder_factory(cfg, msg_dim, in_dim, device, max_node_num, graph_reindexer)
                 attention_type=cfg.detection.gnn_training.encoder.hypformer.attention_type,
                 power_k=cfg.detection.gnn_training.encoder.hypformer.power_k,
                 trans_heads_concat=cfg.detection.gnn_training.encoder.hypformer.trans_heads_concat,
+                use_edge_index_mask=getattr(
+                    cfg.detection.gnn_training.encoder.hypformer, "use_edge_index_mask", False
+                ),
                 graph_reindexer=graph_reindexer,
                 x_is_tuple=cfg.detection.gnn_training.encoder.x_is_tuple,
                 device=device,

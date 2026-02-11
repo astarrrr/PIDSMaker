@@ -1,0 +1,5 @@
+nohup: ignoring input
+==> Running nodlink CADETS_E3 with seed=1, log=nohup_logs/nohup_seed_1.out
+==> Running nodlink CADETS_E3 with seed=42, log=nohup_logs/nohup_seed_42.out
+==> Running nodlink CADETS_E3 with seed=2020, log=nohup_logs/nohup_seed_2020.out
+==> Running nodlink CADETS_E3 with seed=2023, log=nohup_logs/nohup_seed_2023.out

@@ -1,0 +1,966 @@
+[nltk_data] Error loading punkt: <urlopen error [Errno 111] Connection
+[nltk_data]     refused>
+wandb: Currently logged in as: 1971438035 (1971438035-harbin-institute-of-technology) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run rtvtkpk2
+wandb: Tracking run with wandb version 0.23.1
+wandb: Run data is saved locally in /home/pids/wandb/run-20260201_144631-rtvtkpk2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run CADETS_E3_nodlink_seed42
+wandb: ⭐️ View project at https://wandb.ai/1971438035-harbin-institute-of-technology/PIDSMaker
+wandb: 🚀 View run at https://wandb.ai/1971438035-harbin-institute-of-technology/PIDSMaker/runs/rtvtkpk2
+2026-02-01 14:46:39 - Running pipeline in 'Standard' mode.
+2026-02-01 14:46:39 - ======= START SUBTASK training_loop.py =======
+2026-02-01 14:46:39 - Computing graphs...
+Max node in CADETS_E3: 2682632
+2026-02-01 14:46:47 - 
+2026-02-01 14:46:47 - Dataset statistics
+2026-02-01 14:46:47 - Train num graphs: 582
+2026-02-01 14:46:47 - Train edges | mean: 5668 | min: 574 | max: 54930
+2026-02-01 14:46:47 - Train nodes | mean: 1303 | min: 94 | max: 40561
+2026-02-01 14:46:47 - 
+2026-02-01 14:46:47 - Val num graphs: 93
+2026-02-01 14:46:47 - Val edges | mean: 5601 | min: 2574 | max: 55018
+2026-02-01 14:46:47 - Val nodes | mean: 1370 | min: 300 | max: 40492
+2026-02-01 14:46:47 - 
+2026-02-01 14:46:47 - Test num graphs: 337
+2026-02-01 14:46:47 - Test edges | mean: 5902 | min: 646 | max: 53196
+2026-02-01 14:46:47 - Test nodes | mean: 1204 | min: 175 | max: 43173
+2026-02-01 14:46:47 - 
+2026-02-01 14:46:47 - Reindexing graphs...
+2026-02-01 14:46:55 - Reindexing graphs...
+2026-02-01 14:46:56 - Reindexing graphs...
+2026-02-01 14:47:00 - Training...
+2026-02-01 14:47:09 - [@epoch00] Training finished - GPU memory: 0.65 GB | CPU memory: 0.00 GB | Mean Loss: 0.0031
+
+2026-02-01 14:47:09 - Validation...
+2026-02-01 14:47:18 - [@epoch00] Validation finished - Val Loss: 0.1902
+
+2026-02-01 14:47:18 - Testing...
+2026-02-01 14:47:57 - [@epoch00] Test finished - Test Loss: 0.3058
+
+2026-02-01 14:47:57 - Training...
+2026-02-01 14:48:05 - [@epoch01] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0014
+
+2026-02-01 14:48:05 - Validation...
+2026-02-01 14:48:15 - [@epoch01] Validation finished - Val Loss: 0.1590
+
+2026-02-01 14:48:15 - Testing...
+2026-02-01 14:48:52 - [@epoch01] Test finished - Test Loss: 0.2673
+
+2026-02-01 14:48:52 - Training...
+2026-02-01 14:49:02 - [@epoch02] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0013
+
+2026-02-01 14:49:02 - Training...
+2026-02-01 14:49:09 - [@epoch03] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0012
+
+2026-02-01 14:49:09 - Validation...
+2026-02-01 14:49:19 - [@epoch03] Validation finished - Val Loss: 0.1396
+
+2026-02-01 14:49:19 - Testing...
+2026-02-01 14:49:57 - [@epoch03] Test finished - Test Loss: 0.2281
+
+2026-02-01 14:49:57 - Training...
+2026-02-01 14:50:06 - [@epoch04] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0012
+
+2026-02-01 14:50:06 - Training...
+2026-02-01 14:50:13 - [@epoch05] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0010
+
+2026-02-01 14:50:13 - Validation...
+2026-02-01 14:50:23 - [@epoch05] Validation finished - Val Loss: 0.1150
+
+2026-02-01 14:50:23 - Testing...
+2026-02-01 14:50:59 - [@epoch05] Test finished - Test Loss: 0.1905
+
+2026-02-01 14:50:59 - Training...
+2026-02-01 14:51:09 - [@epoch06] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0010
+
+2026-02-01 14:51:09 - Training...
+2026-02-01 14:51:16 - [@epoch07] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0009
+
+2026-02-01 14:51:16 - Validation...
+2026-02-01 14:51:26 - [@epoch07] Validation finished - Val Loss: 0.1083
+
+2026-02-01 14:51:26 - Testing...
+2026-02-01 14:52:03 - [@epoch07] Test finished - Test Loss: 0.1804
+
+2026-02-01 14:52:03 - Training...
+2026-02-01 14:52:13 - [@epoch08] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0009
+
+2026-02-01 14:52:13 - Training...
+2026-02-01 14:52:20 - [@epoch09] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0009
+
+2026-02-01 14:52:20 - Validation...
+2026-02-01 14:52:30 - [@epoch09] Validation finished - Val Loss: 0.1051
+
+2026-02-01 14:52:30 - Testing...
+2026-02-01 14:53:11 - [@epoch09] Test finished - Test Loss: 0.1794
+
+2026-02-01 14:53:11 - Training...
+2026-02-01 14:53:19 - [@epoch10] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0009
+
+2026-02-01 14:53:19 - Training...
+2026-02-01 14:53:26 - [@epoch11] Training finished - GPU memory: 0.66 GB | CPU memory: 0.00 GB | Mean Loss: 0.0009
+
+2026-02-01 14:53:26 - Validation...
+2026-02-01 14:53:36 - [@epoch11] Validation finished - Val Loss: 0.1015
+
+2026-02-01 14:53:36 - Testing...
+2026-02-01 14:54:15 - [@epoch11] Test finished - Test Loss: 0.1793
+
+Task done: /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3
+
+2026-02-01 14:54:16 - Computing time-window labels...
+2026-02-01 14:54:20 - Found 4888/4889 edge labels.
+2026-02-01 14:54:20 - TW 43 -> 4 malicious nodes + 427 malicious edges
+2026-02-01 14:54:20 - TW 44 -> 6 malicious nodes + 534 malicious edges
+2026-02-01 14:54:20 - TW 45 -> 2 malicious nodes + 34 malicious edges
+2026-02-01 14:54:20 - TW 46 -> 3 malicious nodes + 797 malicious edges
+2026-02-01 14:54:20 - TW 229 -> 21 malicious nodes + 15616 malicious edges
+2026-02-01 14:54:20 - TW 230 -> 19 malicious nodes + 4667 malicious edges
+2026-02-01 14:54:20 - TW 231 -> 18 malicious nodes + 16059 malicious edges
+2026-02-01 14:54:20 - TW 302 -> 4 malicious nodes + 397 malicious edges
+2026-02-01 14:54:20 - TW 303 -> 24 malicious nodes + 3760 malicious edges
+
+2026-02-01 14:54:20 - [@model_epoch_0] - Test Evaluation
+2026-02-01 14:54:21 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_0...
+2026-02-01 14:54:22 - Thresholds: MEAN=0.190, STD=0.346, MAX=3.446, 90 Percentile=0.380
+2026-02-01 14:54:22 - Threshold: 0.380
+2026-02-01 14:54:22 - Compute labels...
+2026-02-01 14:54:45 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:54:48 - Analysis of malicious nodes:
+2026-02-01 14:54:48 - -> Malicious node 379482 : loss=0.119 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 379506 : loss=1.110 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 380024 : loss=0.421 | is TP: ✅ /dev/random
+2026-02-01 14:54:48 - -> Malicious node 381102 : loss=0.454 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:54:48 - -> Malicious node 211776 : loss=0.300 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 26254  : loss=2.490 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:54:48 - -> Malicious node 26277  : loss=2.472 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:54:48 - -> Malicious node 26281  : loss=2.428 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:54:48 - -> Malicious node 26318  : loss=2.532 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:54:48 - -> Malicious node 26357  : loss=0.859 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:54:48 - -> Malicious node 228725 : loss=0.704 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 418674 : loss=0.107 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 1219519: loss=1.822 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:54:48 - -> Malicious node 336472 : loss=1.228 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 337550 : loss=1.736 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 140956 : loss=2.512 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:54:48 - -> Malicious node 140957 : loss=1.358 | is TP: ✅ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:54:48 - -> Malicious node 140960 : loss=2.470 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:54:48 - -> Malicious node 354877 : loss=0.256 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 354933 : loss=0.577 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 354935 : loss=0.650 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 354938 : loss=0.367 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 354940 : loss=0.340 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 354975 : loss=0.155 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 355056 : loss=0.155 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 2442623: loss=1.788 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:54:48 - -> Malicious node 2442683: loss=1.679 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:54:48 - -> Malicious node 2444455: loss=1.791 | is TP: ✅ /tmp/minions
+2026-02-01 14:54:48 - -> Malicious node 141147 : loss=0.816 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:54:48 - -> Malicious node 141183 : loss=2.600 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:54:48 - -> Malicious node 355176 : loss=0.462 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355247 : loss=0.463 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355316 : loss=1.788 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355357 : loss=2.313 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355439 : loss=0.064 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 355447 : loss=0.065 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 2445298: loss=1.797 | is TP: ✅ /tmp/font
+2026-02-01 14:54:48 - -> Malicious node 2445651: loss=1.851 | is TP: ✅ /tmp/XIM
+2026-02-01 14:54:48 - -> Malicious node 2446308: loss=1.772 | is TP: ✅ /var/log/netlog
+2026-02-01 14:54:48 - -> Malicious node 2446677: loss=1.802 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:54:48 - -> Malicious node 141285 : loss=1.407 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:54:48 - -> Malicious node 355470 : loss=0.065 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 355502 : loss=0.388 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355507 : loss=0.373 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 355535 : loss=0.441 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355572 : loss=0.430 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355640 : loss=0.252 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 355641 : loss=0.441 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 355657 : loss=0.487 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 2446982: loss=1.827 | is TP: ✅ /tmp/main
+2026-02-01 14:54:48 - -> Malicious node 2447478: loss=1.820 | is TP: ✅ /tmp/test
+2026-02-01 14:54:48 - -> Malicious node 356868 : loss=0.166 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 147459 : loss=2.526 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:54:48 - -> Malicious node 147460 : loss=1.337 | is TP: ✅ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:54:48 - -> Malicious node 147461 : loss=1.096 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:54:48 - -> Malicious node 147515 : loss=1.211 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:54:48 - -> Malicious node 370873 : loss=0.104 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370875 : loss=0.091 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370876 : loss=0.260 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370896 : loss=0.104 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370898 : loss=0.091 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370899 : loss=0.266 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370903 : loss=0.049 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370904 : loss=0.190 | is TP: ❌ None
+2026-02-01 14:54:48 - -> Malicious node 370961 : loss=1.684 | is TP: ✅ None
+2026-02-01 14:54:48 - -> Malicious node 2609543: loss=1.816 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:54:48 - -> Malicious node 2609587: loss=0.206 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:54:48 - -> Malicious node 2609590: loss=1.396 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:54:48 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:54:53 - TPs per attack:
+2026-02-01 14:54:53 - attack 1: 31
+2026-02-01 14:54:53 - attack 0: 7
+2026-02-01 14:54:53 - attack 2: 9
+2026-02-01 14:54:58 - [@model_epoch_0] - Stats
+2026-02-01 14:54:58 - precision: 0.00079
+2026-02-01 14:54:58 - recall: 0.66176
+2026-02-01 14:54:58 - fpr: 0.2033909
+2026-02-01 14:54:58 - fscore: 0.00157
+2026-02-01 14:54:58 - ap: 0.00089
+2026-02-01 14:54:58 - accuracy: 0.79658
+2026-02-01 14:54:58 - balanced_acc: 0.72919
+2026-02-01 14:54:58 - auc: 0.78614
+2026-02-01 14:54:58 - lr(+): 3.25366
+2026-02-01 14:54:58 - dor: 7.66299
+2026-02-01 14:54:58 - mcc: 0.01769
+2026-02-01 14:54:58 - tp: 45
+2026-02-01 14:54:58 - fp: 57258
+2026-02-01 14:54:58 - tn: 224259
+2026-02-01 14:54:58 - fn: 23
+2026-02-01 14:54:58 - fp_in_malicious_tw_ratio: 0.021
+2026-02-01 14:54:58 - percent_detected_attacks: 1.0
+2026-02-01 14:54:58 - fps_if_all_attacks_detected: 7062
+2026-02-01 14:54:58 - tps_if_all_attacks_detected: 1
+2026-02-01 14:54:58 - precision_if_all_attacks_detected: 0.00014158289678606822
+2026-02-01 14:54:58 - recall_if_all_attacks_detected: 0.013333333333333157
+2026-02-01 14:54:58 - adp_score: 0.002
+2026-02-01 14:54:58 - discrim_score_att_0: -0.261
+2026-02-01 14:54:58 - discrim_score_att_1: -0.2422
+2026-02-01 14:54:58 - discrim_score_att_2: -0.2422
+2026-02-01 14:54:58 - discrimination: -0.2485
+2026-02-01 14:54:58 - discrim_tp_att_0: 0
+2026-02-01 14:54:58 - discrim_tp_att_1: 0
+2026-02-01 14:54:58 - discrim_tp_att_2: 0
+2026-02-01 14:54:58 - discrim_tp_att_sum: 0
+2026-02-01 14:54:58 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_0.pkl
+2026-02-01 14:54:58 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_0.svg
+
+2026-02-01 14:55:03 - [@model_epoch_1] - Test Evaluation
+2026-02-01 14:55:05 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_1...
+2026-02-01 14:55:05 - Thresholds: MEAN=0.159, STD=0.319, MAX=3.440, 90 Percentile=0.331
+2026-02-01 14:55:05 - Threshold: 0.331
+2026-02-01 14:55:05 - Compute labels...
+2026-02-01 14:55:29 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:55:32 - Analysis of malicious nodes:
+2026-02-01 14:55:32 - -> Malicious node 379482 : loss=0.073 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 379506 : loss=1.001 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 380024 : loss=0.344 | is TP: ✅ /dev/random
+2026-02-01 14:55:32 - -> Malicious node 381102 : loss=0.461 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:55:32 - -> Malicious node 211776 : loss=0.178 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 26254  : loss=2.340 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:55:32 - -> Malicious node 26277  : loss=2.288 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:55:32 - -> Malicious node 26281  : loss=2.276 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:55:32 - -> Malicious node 26318  : loss=2.708 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:55:32 - -> Malicious node 26357  : loss=0.836 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:55:32 - -> Malicious node 228725 : loss=0.719 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 418674 : loss=0.066 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 1219519: loss=1.866 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:55:32 - -> Malicious node 336472 : loss=1.148 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 337550 : loss=1.606 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 140956 : loss=2.359 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:55:32 - -> Malicious node 140957 : loss=0.986 | is TP: ✅ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:55:32 - -> Malicious node 140960 : loss=2.193 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:55:32 - -> Malicious node 354877 : loss=0.232 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 354933 : loss=0.574 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 354935 : loss=0.646 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 354938 : loss=0.531 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 354940 : loss=0.514 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 354975 : loss=0.170 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 355056 : loss=0.170 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 2442623: loss=1.825 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:55:32 - -> Malicious node 2442683: loss=1.585 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:55:32 - -> Malicious node 2444455: loss=1.799 | is TP: ✅ /tmp/minions
+2026-02-01 14:55:32 - -> Malicious node 141147 : loss=0.988 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:55:32 - -> Malicious node 141183 : loss=3.044 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:55:32 - -> Malicious node 355176 : loss=0.445 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355247 : loss=0.445 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355316 : loss=1.788 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355357 : loss=2.313 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355439 : loss=0.058 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 355447 : loss=0.059 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 2445298: loss=1.917 | is TP: ✅ /tmp/font
+2026-02-01 14:55:32 - -> Malicious node 2445651: loss=1.971 | is TP: ✅ /tmp/XIM
+2026-02-01 14:55:32 - -> Malicious node 2446308: loss=1.580 | is TP: ✅ /var/log/netlog
+2026-02-01 14:55:32 - -> Malicious node 2446677: loss=1.633 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:55:32 - -> Malicious node 141285 : loss=1.306 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:55:32 - -> Malicious node 355470 : loss=0.059 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 355502 : loss=0.551 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355507 : loss=0.544 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355535 : loss=0.427 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355572 : loss=0.414 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355640 : loss=0.213 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 355641 : loss=0.427 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 355657 : loss=0.467 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 2446982: loss=1.675 | is TP: ✅ /tmp/main
+2026-02-01 14:55:32 - -> Malicious node 2447478: loss=1.688 | is TP: ✅ /tmp/test
+2026-02-01 14:55:32 - -> Malicious node 356868 : loss=0.115 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 147459 : loss=2.314 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:55:32 - -> Malicious node 147460 : loss=0.971 | is TP: ✅ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:55:32 - -> Malicious node 147461 : loss=0.833 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:55:32 - -> Malicious node 147515 : loss=1.431 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:55:32 - -> Malicious node 370873 : loss=0.105 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370875 : loss=0.106 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370876 : loss=0.225 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370896 : loss=0.105 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370898 : loss=0.106 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370899 : loss=0.226 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370903 : loss=0.035 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370904 : loss=0.183 | is TP: ❌ None
+2026-02-01 14:55:32 - -> Malicious node 370961 : loss=1.670 | is TP: ✅ None
+2026-02-01 14:55:32 - -> Malicious node 2609543: loss=1.896 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:55:32 - -> Malicious node 2609587: loss=0.124 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:55:32 - -> Malicious node 2609590: loss=1.353 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:55:32 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:55:36 - TPs per attack:
+2026-02-01 14:55:36 - attack 1: 34
+2026-02-01 14:55:36 - attack 0: 7
+2026-02-01 14:55:36 - attack 2: 9
+2026-02-01 14:55:42 - [@model_epoch_1] - Stats
+2026-02-01 14:55:42 - precision: 0.00074
+2026-02-01 14:55:42 - recall: 0.70588
+2026-02-01 14:55:42 - fpr: 0.2295101
+2026-02-01 14:55:42 - fscore: 0.00148
+2026-02-01 14:55:42 - ap: 0.00145
+2026-02-01 14:55:42 - accuracy: 0.77047
+2026-02-01 14:55:42 - balanced_acc: 0.73819
+2026-02-01 14:55:42 - auc: 0.79991
+2026-02-01 14:55:42 - lr(+): 3.0756
+2026-02-01 14:55:42 - dor: 8.05706
+2026-02-01 14:55:42 - mcc: 0.0176
+2026-02-01 14:55:42 - tp: 48
+2026-02-01 14:55:42 - fp: 64611
+2026-02-01 14:55:42 - tn: 216906
+2026-02-01 14:55:42 - fn: 20
+2026-02-01 14:55:42 - fp_in_malicious_tw_ratio: 0.021
+2026-02-01 14:55:42 - percent_detected_attacks: 1.0
+2026-02-01 14:55:42 - fps_if_all_attacks_detected: 298
+2026-02-01 14:55:42 - tps_if_all_attacks_detected: 1
+2026-02-01 14:55:42 - precision_if_all_attacks_detected: 0.0033444816053511592
+2026-02-01 14:55:42 - recall_if_all_attacks_detected: 0.013333333333333157
+2026-02-01 14:55:42 - adp_score: 0.021
+2026-02-01 14:55:42 - discrim_score_att_0: -0.2061
+2026-02-01 14:55:42 - discrim_score_att_1: -0.1141
+2026-02-01 14:55:42 - discrim_score_att_2: -0.1141
+2026-02-01 14:55:42 - discrimination: -0.1448
+2026-02-01 14:55:42 - discrim_tp_att_0: 0
+2026-02-01 14:55:42 - discrim_tp_att_1: 0
+2026-02-01 14:55:42 - discrim_tp_att_2: 0
+2026-02-01 14:55:42 - discrim_tp_att_sum: 0
+2026-02-01 14:55:42 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_1.pkl
+2026-02-01 14:55:42 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_1.svg
+
+2026-02-01 14:55:42 - [@model_epoch_3] - Test Evaluation
+2026-02-01 14:55:43 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_3...
+2026-02-01 14:55:43 - Thresholds: MEAN=0.140, STD=0.292, MAX=3.641, 90 Percentile=0.369
+2026-02-01 14:55:43 - Threshold: 0.369
+2026-02-01 14:55:43 - Compute labels...
+2026-02-01 14:56:07 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:56:10 - Analysis of malicious nodes:
+2026-02-01 14:56:10 - -> Malicious node 379482 : loss=0.051 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 379506 : loss=1.239 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 380024 : loss=0.320 | is TP: ❌ /dev/random
+2026-02-01 14:56:10 - -> Malicious node 381102 : loss=0.377 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:56:10 - -> Malicious node 211776 : loss=0.222 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 26254  : loss=1.803 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:56:10 - -> Malicious node 26277  : loss=1.703 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:56:10 - -> Malicious node 26281  : loss=1.759 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:56:10 - -> Malicious node 26318  : loss=3.453 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:56:10 - -> Malicious node 26357  : loss=1.376 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:56:10 - -> Malicious node 228725 : loss=0.493 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 418674 : loss=0.045 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 1219519: loss=2.159 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:56:10 - -> Malicious node 336472 : loss=1.092 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 337550 : loss=1.540 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 140956 : loss=1.853 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:56:10 - -> Malicious node 140957 : loss=0.575 | is TP: ✅ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:56:10 - -> Malicious node 140960 : loss=1.466 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:56:10 - -> Malicious node 354877 : loss=0.222 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 354933 : loss=0.595 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 354935 : loss=0.670 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 354938 : loss=0.674 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 354940 : loss=0.640 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 354975 : loss=0.201 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 355056 : loss=0.200 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 2442623: loss=2.089 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:56:10 - -> Malicious node 2442683: loss=1.468 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:56:10 - -> Malicious node 2444455: loss=2.077 | is TP: ✅ /tmp/minions
+2026-02-01 14:56:10 - -> Malicious node 141147 : loss=0.991 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:56:10 - -> Malicious node 141183 : loss=3.217 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:56:10 - -> Malicious node 355176 : loss=0.457 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355247 : loss=0.457 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355316 : loss=1.845 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355357 : loss=2.202 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355439 : loss=0.061 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 355447 : loss=0.061 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 2445298: loss=2.386 | is TP: ✅ /tmp/font
+2026-02-01 14:56:10 - -> Malicious node 2445651: loss=2.488 | is TP: ✅ /tmp/XIM
+2026-02-01 14:56:10 - -> Malicious node 2446308: loss=1.566 | is TP: ✅ /var/log/netlog
+2026-02-01 14:56:10 - -> Malicious node 2446677: loss=1.625 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:56:10 - -> Malicious node 141285 : loss=2.003 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:56:10 - -> Malicious node 355470 : loss=0.056 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 355502 : loss=0.722 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355507 : loss=0.708 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355535 : loss=0.446 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355572 : loss=0.426 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355640 : loss=0.197 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 355641 : loss=0.446 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 355657 : loss=0.452 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 2446982: loss=1.686 | is TP: ✅ /tmp/main
+2026-02-01 14:56:10 - -> Malicious node 2447478: loss=1.693 | is TP: ✅ /tmp/test
+2026-02-01 14:56:10 - -> Malicious node 356868 : loss=0.222 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 147459 : loss=1.681 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:56:10 - -> Malicious node 147460 : loss=0.614 | is TP: ✅ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:56:10 - -> Malicious node 147461 : loss=0.732 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:56:10 - -> Malicious node 147515 : loss=1.547 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:56:10 - -> Malicious node 370873 : loss=0.063 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370875 : loss=0.144 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370876 : loss=0.197 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370896 : loss=0.063 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370898 : loss=0.144 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370899 : loss=0.200 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370903 : loss=0.036 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370904 : loss=0.191 | is TP: ❌ None
+2026-02-01 14:56:10 - -> Malicious node 370961 : loss=1.734 | is TP: ✅ None
+2026-02-01 14:56:10 - -> Malicious node 2609543: loss=2.253 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:56:10 - -> Malicious node 2609587: loss=0.103 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:56:10 - -> Malicious node 2609590: loss=1.389 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:56:10 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:56:15 - TPs per attack:
+2026-02-01 14:56:15 - attack 1: 33
+2026-02-01 14:56:15 - attack 0: 7
+2026-02-01 14:56:15 - attack 2: 9
+2026-02-01 14:56:23 - [@model_epoch_3] - Stats
+2026-02-01 14:56:23 - precision: 0.00066
+2026-02-01 14:56:23 - recall: 0.69118
+2026-02-01 14:56:23 - fpr: 0.2526384
+2026-02-01 14:56:23 - fscore: 0.00132
+2026-02-01 14:56:23 - ap: 0.00256
+2026-02-01 14:56:23 - accuracy: 0.74735
+2026-02-01 14:56:23 - balanced_acc: 0.71927
+2026-02-01 14:56:23 - auc: 0.82084
+2026-02-01 14:56:23 - lr(+): 2.73583
+2026-02-01 14:56:23 - dor: 6.62079
+2026-02-01 14:56:23 - mcc: 0.01568
+2026-02-01 14:56:23 - tp: 47
+2026-02-01 14:56:23 - fp: 71122
+2026-02-01 14:56:23 - tn: 210395
+2026-02-01 14:56:23 - fn: 21
+2026-02-01 14:56:23 - fp_in_malicious_tw_ratio: 0.023
+2026-02-01 14:56:23 - percent_detected_attacks: 1.0
+2026-02-01 14:56:23 - fps_if_all_attacks_detected: 279
+2026-02-01 14:56:23 - tps_if_all_attacks_detected: 1
+2026-02-01 14:56:23 - precision_if_all_attacks_detected: 0.0035714285714285583
+2026-02-01 14:56:23 - recall_if_all_attacks_detected: 0.013333333333333157
+2026-02-01 14:56:23 - adp_score: 0.014
+2026-02-01 14:56:23 - discrim_score_att_0: -0.0562
+2026-02-01 14:56:23 - discrim_score_att_1: -0.1194
+2026-02-01 14:56:23 - discrim_score_att_2: -0.1194
+2026-02-01 14:56:23 - discrimination: -0.0983
+2026-02-01 14:56:23 - discrim_tp_att_0: 0
+2026-02-01 14:56:23 - discrim_tp_att_1: 0
+2026-02-01 14:56:23 - discrim_tp_att_2: 0
+2026-02-01 14:56:23 - discrim_tp_att_sum: 0
+2026-02-01 14:56:23 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_3.pkl
+2026-02-01 14:56:23 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_3.svg
+
+2026-02-01 14:56:23 - [@model_epoch_5] - Test Evaluation
+2026-02-01 14:56:24 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_5...
+2026-02-01 14:56:24 - Thresholds: MEAN=0.115, STD=0.287, MAX=3.801, 90 Percentile=0.311
+2026-02-01 14:56:24 - Threshold: 0.311
+2026-02-01 14:56:24 - Compute labels...
+2026-02-01 14:56:47 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:56:51 - Analysis of malicious nodes:
+2026-02-01 14:56:51 - -> Malicious node 379482 : loss=0.042 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 379506 : loss=1.733 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 380024 : loss=0.334 | is TP: ✅ /dev/random
+2026-02-01 14:56:51 - -> Malicious node 381102 : loss=0.432 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:56:51 - -> Malicious node 211776 : loss=0.255 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 26254  : loss=1.244 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:56:51 - -> Malicious node 26277  : loss=1.120 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:56:51 - -> Malicious node 26281  : loss=1.211 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:56:51 - -> Malicious node 26318  : loss=3.619 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:56:51 - -> Malicious node 26357  : loss=1.664 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:56:51 - -> Malicious node 228725 : loss=0.480 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 418674 : loss=0.032 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 1219519: loss=2.560 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:56:51 - -> Malicious node 336472 : loss=1.083 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 337550 : loss=1.509 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 140956 : loss=1.287 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:56:51 - -> Malicious node 140957 : loss=0.241 | is TP: ❌ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:56:51 - -> Malicious node 140960 : loss=0.876 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:56:51 - -> Malicious node 354877 : loss=0.066 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 354933 : loss=0.634 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 354935 : loss=0.713 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 354938 : loss=0.584 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 354940 : loss=0.537 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 354975 : loss=0.241 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 355056 : loss=0.241 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 2442623: loss=2.470 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:56:51 - -> Malicious node 2442683: loss=1.540 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:56:51 - -> Malicious node 2444455: loss=2.458 | is TP: ✅ /tmp/minions
+2026-02-01 14:56:51 - -> Malicious node 141147 : loss=0.787 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:56:51 - -> Malicious node 141183 : loss=3.166 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:56:51 - -> Malicious node 355176 : loss=0.461 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355247 : loss=0.464 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355316 : loss=1.853 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355357 : loss=2.207 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355439 : loss=0.064 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 355447 : loss=0.077 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 2445298: loss=2.899 | is TP: ✅ /tmp/font
+2026-02-01 14:56:51 - -> Malicious node 2445651: loss=3.047 | is TP: ✅ /tmp/XIM
+2026-02-01 14:56:51 - -> Malicious node 2446308: loss=1.680 | is TP: ✅ /var/log/netlog
+2026-02-01 14:56:51 - -> Malicious node 2446677: loss=1.736 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:56:51 - -> Malicious node 141285 : loss=2.496 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:56:51 - -> Malicious node 355470 : loss=0.094 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 355502 : loss=0.646 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355507 : loss=0.630 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355535 : loss=0.471 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355572 : loss=0.416 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355640 : loss=0.241 | is TP: ❌ None
+2026-02-01 14:56:51 - -> Malicious node 355641 : loss=0.466 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 355657 : loss=0.461 | is TP: ✅ None
+2026-02-01 14:56:51 - -> Malicious node 2446982: loss=1.804 | is TP: ✅ /tmp/main
+2026-02-01 14:56:51 - -> Malicious node 2447478: loss=1.818 | is TP: ✅ /tmp/test
+2026-02-01 14:56:51 - -> Malicious node 356868 : loss=0.255 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 147459 : loss=1.100 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:56:52 - -> Malicious node 147460 : loss=0.292 | is TP: ❌ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:56:52 - -> Malicious node 147461 : loss=0.577 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:56:52 - -> Malicious node 147515 : loss=1.604 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:56:52 - -> Malicious node 370873 : loss=0.058 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370875 : loss=0.158 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370876 : loss=0.192 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370896 : loss=0.058 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370898 : loss=0.156 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370899 : loss=0.196 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370903 : loss=0.049 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370904 : loss=0.237 | is TP: ❌ None
+2026-02-01 14:56:52 - -> Malicious node 370961 : loss=1.810 | is TP: ✅ None
+2026-02-01 14:56:52 - -> Malicious node 2609543: loss=2.695 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:56:52 - -> Malicious node 2609587: loss=0.119 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:56:52 - -> Malicious node 2609590: loss=1.480 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:56:52 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:56:56 - TPs per attack:
+2026-02-01 14:56:56 - attack 1: 33
+2026-02-01 14:56:56 - attack 0: 7
+2026-02-01 14:56:56 - attack 2: 8
+2026-02-01 14:57:02 - [@model_epoch_5] - Stats
+2026-02-01 14:57:02 - precision: 0.00074
+2026-02-01 14:57:02 - recall: 0.67647
+2026-02-01 14:57:02 - fpr: 0.2220576
+2026-02-01 14:57:02 - fscore: 0.00147
+2026-02-01 14:57:02 - ap: 0.00264
+2026-02-01 14:57:02 - accuracy: 0.77792
+2026-02-01 14:57:02 - balanced_acc: 0.72721
+2026-02-01 14:57:02 - auc: 0.84864
+2026-02-01 14:57:02 - lr(+): 3.04637
+2026-02-01 14:57:02 - dor: 7.32516
+2026-02-01 14:57:02 - mcc: 0.01698
+2026-02-01 14:57:02 - tp: 46
+2026-02-01 14:57:02 - fp: 62513
+2026-02-01 14:57:02 - tn: 219004
+2026-02-01 14:57:02 - fn: 22
+2026-02-01 14:57:02 - fp_in_malicious_tw_ratio: 0.023
+2026-02-01 14:57:02 - percent_detected_attacks: 1.0
+2026-02-01 14:57:02 - fps_if_all_attacks_detected: 320
+2026-02-01 14:57:02 - tps_if_all_attacks_detected: 1
+2026-02-01 14:57:02 - precision_if_all_attacks_detected: 0.003115264797507778
+2026-02-01 14:57:02 - recall_if_all_attacks_detected: 0.013333333333333157
+2026-02-01 14:57:02 - adp_score: 0.013
+2026-02-01 14:57:02 - discrim_score_att_0: -0.0483
+2026-02-01 14:57:02 - discrim_score_att_1: -0.1653
+2026-02-01 14:57:02 - discrim_score_att_2: -0.1653
+2026-02-01 14:57:02 - discrimination: -0.1263
+2026-02-01 14:57:02 - discrim_tp_att_0: 0
+2026-02-01 14:57:02 - discrim_tp_att_1: 0
+2026-02-01 14:57:02 - discrim_tp_att_2: 0
+2026-02-01 14:57:02 - discrim_tp_att_sum: 0
+2026-02-01 14:57:02 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_5.pkl
+2026-02-01 14:57:02 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_5.svg
+
+2026-02-01 14:57:02 - [@model_epoch_7] - Test Evaluation
+2026-02-01 14:57:03 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_7...
+2026-02-01 14:57:03 - Thresholds: MEAN=0.108, STD=0.288, MAX=3.820, 90 Percentile=0.296
+2026-02-01 14:57:03 - Threshold: 0.296
+2026-02-01 14:57:03 - Compute labels...
+2026-02-01 14:57:27 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:57:30 - Analysis of malicious nodes:
+2026-02-01 14:57:30 - -> Malicious node 379482 : loss=0.044 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 379506 : loss=2.022 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 380024 : loss=0.345 | is TP: ✅ /dev/random
+2026-02-01 14:57:30 - -> Malicious node 381102 : loss=0.505 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:57:30 - -> Malicious node 211776 : loss=0.328 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 26254  : loss=0.947 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:57:30 - -> Malicious node 26277  : loss=0.821 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:57:30 - -> Malicious node 26281  : loss=0.924 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:57:30 - -> Malicious node 26318  : loss=3.616 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:57:30 - -> Malicious node 26357  : loss=1.666 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:57:30 - -> Malicious node 228725 : loss=0.481 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 418674 : loss=0.031 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 1219519: loss=2.810 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:57:30 - -> Malicious node 336472 : loss=1.105 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 337550 : loss=1.472 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 140956 : loss=0.999 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:57:30 - -> Malicious node 140957 : loss=0.277 | is TP: ❌ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:57:30 - -> Malicious node 140960 : loss=0.835 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:57:30 - -> Malicious node 354877 : loss=0.017 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 354933 : loss=0.638 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 354935 : loss=0.722 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 354938 : loss=0.450 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 354940 : loss=0.398 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 354975 : loss=0.251 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 355056 : loss=0.252 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 2442623: loss=2.680 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:57:30 - -> Malicious node 2442683: loss=1.603 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:57:30 - -> Malicious node 2444455: loss=2.683 | is TP: ✅ /tmp/minions
+2026-02-01 14:57:30 - -> Malicious node 141147 : loss=1.071 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:57:30 - -> Malicious node 141183 : loss=3.327 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:57:30 - -> Malicious node 355176 : loss=0.474 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355247 : loss=0.480 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355316 : loss=1.918 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355357 : loss=2.192 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355439 : loss=0.069 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 355447 : loss=0.101 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 2445298: loss=3.310 | is TP: ✅ /tmp/font
+2026-02-01 14:57:30 - -> Malicious node 2445651: loss=3.519 | is TP: ✅ /tmp/XIM
+2026-02-01 14:57:30 - -> Malicious node 2446308: loss=1.652 | is TP: ✅ /var/log/netlog
+2026-02-01 14:57:30 - -> Malicious node 2446677: loss=1.680 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:57:30 - -> Malicious node 141285 : loss=2.483 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:57:30 - -> Malicious node 355470 : loss=0.144 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 355502 : loss=0.509 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355507 : loss=0.493 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355535 : loss=0.459 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355572 : loss=0.394 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355640 : loss=0.259 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 355641 : loss=0.450 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 355657 : loss=0.492 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 2446982: loss=1.743 | is TP: ✅ /tmp/main
+2026-02-01 14:57:30 - -> Malicious node 2447478: loss=1.777 | is TP: ✅ /tmp/test
+2026-02-01 14:57:30 - -> Malicious node 356868 : loss=0.329 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 147459 : loss=0.785 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:57:30 - -> Malicious node 147460 : loss=0.399 | is TP: ✅ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:57:30 - -> Malicious node 147461 : loss=0.897 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:57:30 - -> Malicious node 147515 : loss=1.875 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:57:30 - -> Malicious node 370873 : loss=0.063 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370875 : loss=0.172 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370876 : loss=0.236 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370896 : loss=0.063 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370898 : loss=0.168 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370899 : loss=0.242 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370903 : loss=0.057 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370904 : loss=0.232 | is TP: ❌ None
+2026-02-01 14:57:30 - -> Malicious node 370961 : loss=1.832 | is TP: ✅ None
+2026-02-01 14:57:30 - -> Malicious node 2609543: loss=3.004 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:57:30 - -> Malicious node 2609587: loss=0.122 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:57:30 - -> Malicious node 2609590: loss=1.423 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:57:30 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:57:35 - TPs per attack:
+2026-02-01 14:57:35 - attack 1: 33
+2026-02-01 14:57:35 - attack 0: 8
+2026-02-01 14:57:35 - attack 2: 10
+2026-02-01 14:57:40 - [@model_epoch_7] - Stats
+2026-02-01 14:57:40 - precision: 0.00079
+2026-02-01 14:57:40 - recall: 0.72059
+2026-02-01 14:57:40 - fpr: 0.2209778
+2026-02-01 14:57:40 - fscore: 0.00157
+2026-02-01 14:57:40 - ap: 0.00274
+2026-02-01 14:57:40 - accuracy: 0.77901
+2026-02-01 14:57:40 - balanced_acc: 0.74981
+2026-02-01 14:57:40 - auc: 0.85082
+2026-02-01 14:57:40 - lr(+): 3.26091
+2026-02-01 14:57:40 - dor: 9.09167
+2026-02-01 14:57:40 - mcc: 0.01871
+2026-02-01 14:57:40 - tp: 49
+2026-02-01 14:57:40 - fp: 62209
+2026-02-01 14:57:40 - tn: 219308
+2026-02-01 14:57:40 - fn: 19
+2026-02-01 14:57:40 - fp_in_malicious_tw_ratio: 0.024
+2026-02-01 14:57:40 - percent_detected_attacks: 1.0
+2026-02-01 14:57:40 - fps_if_all_attacks_detected: 322
+2026-02-01 14:57:40 - tps_if_all_attacks_detected: 2
+2026-02-01 14:57:40 - precision_if_all_attacks_detected: 0.00617283950617282
+2026-02-01 14:57:40 - recall_if_all_attacks_detected: 0.026666666666666314
+2026-02-01 14:57:40 - adp_score: 0.014
+2026-02-01 14:57:40 - discrim_score_att_0: -0.0589
+2026-02-01 14:57:40 - discrim_score_att_1: -0.0831
+2026-02-01 14:57:40 - discrim_score_att_2: -0.1308
+2026-02-01 14:57:40 - discrimination: -0.091
+2026-02-01 14:57:40 - discrim_tp_att_0: 0
+2026-02-01 14:57:40 - discrim_tp_att_1: 0
+2026-02-01 14:57:40 - discrim_tp_att_2: 0
+2026-02-01 14:57:40 - discrim_tp_att_sum: 0
+2026-02-01 14:57:40 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_7.pkl
+2026-02-01 14:57:40 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_7.svg
+
+2026-02-01 14:57:40 - [@model_epoch_9] - Test Evaluation
+/home/pids/pidsmaker/detection/evaluation_methods/evaluation_utils.py:699: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure(figsize=(10, 6))
+2026-02-01 14:57:42 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_9...
+2026-02-01 14:57:42 - Thresholds: MEAN=0.105, STD=0.287, MAX=3.800, 90 Percentile=0.284
+2026-02-01 14:57:42 - Threshold: 0.284
+2026-02-01 14:57:42 - Compute labels...
+2026-02-01 14:58:06 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:58:08 - Analysis of malicious nodes:
+2026-02-01 14:58:08 - -> Malicious node 379482 : loss=0.049 | is TP: ❌ None
+2026-02-01 14:58:08 - -> Malicious node 379506 : loss=2.237 | is TP: ✅ None
+2026-02-01 14:58:08 - -> Malicious node 380024 : loss=0.352 | is TP: ✅ /dev/random
+2026-02-01 14:58:08 - -> Malicious node 381102 : loss=0.576 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:58:08 - -> Malicious node 211776 : loss=0.286 | is TP: ✅ None
+2026-02-01 14:58:08 - -> Malicious node 26254  : loss=0.776 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:58:08 - -> Malicious node 26277  : loss=0.658 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:58:08 - -> Malicious node 26281  : loss=0.756 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:58:08 - -> Malicious node 26318  : loss=3.607 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:58:08 - -> Malicious node 26357  : loss=1.674 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:58:08 - -> Malicious node 228725 : loss=0.458 | is TP: ✅ None
+2026-02-01 14:58:08 - -> Malicious node 418674 : loss=0.033 | is TP: ❌ None
+2026-02-01 14:58:08 - -> Malicious node 1219519: loss=3.002 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:58:08 - -> Malicious node 336472 : loss=1.122 | is TP: ✅ None
+2026-02-01 14:58:08 - -> Malicious node 337550 : loss=1.398 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 140956 : loss=0.831 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:58:09 - -> Malicious node 140957 : loss=0.353 | is TP: ✅ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:58:09 - -> Malicious node 140960 : loss=0.978 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:58:09 - -> Malicious node 354877 : loss=0.011 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 354933 : loss=0.620 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 354935 : loss=0.718 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 354938 : loss=0.463 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 354940 : loss=0.408 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 354975 : loss=0.237 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 355056 : loss=0.238 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 2442623: loss=2.852 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:58:09 - -> Malicious node 2442683: loss=1.647 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:58:09 - -> Malicious node 2444455: loss=2.856 | is TP: ✅ /tmp/minions
+2026-02-01 14:58:09 - -> Malicious node 141147 : loss=1.114 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:58:09 - -> Malicious node 141183 : loss=3.363 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:58:09 - -> Malicious node 355176 : loss=0.476 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355247 : loss=0.487 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355316 : loss=1.920 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355357 : loss=2.204 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355439 : loss=0.075 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 355447 : loss=0.120 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 2445298: loss=3.556 | is TP: ✅ /tmp/font
+2026-02-01 14:58:09 - -> Malicious node 2445651: loss=3.754 | is TP: ✅ /tmp/XIM
+2026-02-01 14:58:09 - -> Malicious node 2446308: loss=1.652 | is TP: ✅ /var/log/netlog
+2026-02-01 14:58:09 - -> Malicious node 2446677: loss=1.664 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:58:09 - -> Malicious node 141285 : loss=2.530 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:58:09 - -> Malicious node 355470 : loss=0.168 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 355502 : loss=0.512 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355507 : loss=0.495 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355535 : loss=0.458 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355572 : loss=0.378 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355640 : loss=0.269 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 355641 : loss=0.443 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 355657 : loss=0.502 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 2446982: loss=1.728 | is TP: ✅ /tmp/main
+2026-02-01 14:58:09 - -> Malicious node 2447478: loss=1.772 | is TP: ✅ /tmp/test
+2026-02-01 14:58:09 - -> Malicious node 356868 : loss=0.287 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 147459 : loss=0.620 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:58:09 - -> Malicious node 147460 : loss=0.530 | is TP: ✅ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:58:09 - -> Malicious node 147461 : loss=1.043 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:58:09 - -> Malicious node 147515 : loss=1.904 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:58:09 - -> Malicious node 370873 : loss=0.065 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370875 : loss=0.159 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370876 : loss=0.279 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370896 : loss=0.066 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370898 : loss=0.155 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370899 : loss=0.292 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 370903 : loss=0.050 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370904 : loss=0.226 | is TP: ❌ None
+2026-02-01 14:58:09 - -> Malicious node 370961 : loss=1.880 | is TP: ✅ None
+2026-02-01 14:58:09 - -> Malicious node 2609543: loss=3.236 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:58:09 - -> Malicious node 2609587: loss=0.124 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:58:09 - -> Malicious node 2609590: loss=1.362 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:58:09 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:58:13 - TPs per attack:
+2026-02-01 14:58:13 - attack 1: 34
+2026-02-01 14:58:13 - attack 0: 8
+2026-02-01 14:58:13 - attack 2: 11
+2026-02-01 14:58:19 - [@model_epoch_9] - Stats
+2026-02-01 14:58:19 - precision: 0.00083
+2026-02-01 14:58:19 - recall: 0.75
+2026-02-01 14:58:19 - fpr: 0.2182568
+2026-02-01 14:58:19 - fscore: 0.00166
+2026-02-01 14:58:19 - ap: 0.00333
+2026-02-01 14:58:19 - accuracy: 0.78174
+2026-02-01 14:58:19 - balanced_acc: 0.76587
+2026-02-01 14:58:19 - auc: 0.85605
+2026-02-01 14:58:19 - lr(+): 3.43632
+2026-02-01 14:58:19 - dor: 10.74528
+2026-02-01 14:58:19 - mcc: 0.02
+2026-02-01 14:58:19 - tp: 51
+2026-02-01 14:58:19 - fp: 61443
+2026-02-01 14:58:19 - tn: 220074
+2026-02-01 14:58:19 - fn: 17
+2026-02-01 14:58:19 - fp_in_malicious_tw_ratio: 0.024
+2026-02-01 14:58:19 - percent_detected_attacks: 1.0
+2026-02-01 14:58:19 - fps_if_all_attacks_detected: 321
+2026-02-01 14:58:19 - tps_if_all_attacks_detected: 3
+2026-02-01 14:58:19 - precision_if_all_attacks_detected: 0.00925925925925923
+2026-02-01 14:58:19 - recall_if_all_attacks_detected: 0.03999999999999947
+2026-02-01 14:58:19 - adp_score: 0.022
+2026-02-01 14:58:19 - discrim_score_att_0: -0.059
+2026-02-01 14:58:19 - discrim_score_att_1: -0.0225
+2026-02-01 14:58:19 - discrim_score_att_2: -0.1194
+2026-02-01 14:58:19 - discrimination: -0.0669
+2026-02-01 14:58:19 - discrim_tp_att_0: 0
+2026-02-01 14:58:19 - discrim_tp_att_1: 0
+2026-02-01 14:58:19 - discrim_tp_att_2: 0
+2026-02-01 14:58:19 - discrim_tp_att_sum: 0
+2026-02-01 14:58:19 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_9.pkl
+2026-02-01 14:58:19 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_9.svg
+
+2026-02-01 14:58:19 - [@model_epoch_11] - Test Evaluation
+2026-02-01 14:58:20 - Loading data from /home/artifacts/detection/gnn_training/dc2237fccd385f042de1a38050636a9169a29ffcbe0e2ccb6a5aca024a468e9f/CADETS_E3/edge_losses/test/model_epoch_11...
+2026-02-01 14:58:20 - Thresholds: MEAN=0.102, STD=0.284, MAX=3.831, 90 Percentile=0.266
+2026-02-01 14:58:20 - Threshold: 0.266
+2026-02-01 14:58:20 - Compute labels...
+2026-02-01 14:58:44 - Resutls saved to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/results/results.pth
+2026-02-01 14:58:47 - Analysis of malicious nodes:
+2026-02-01 14:58:47 - -> Malicious node 379482 : loss=0.051 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 379506 : loss=2.731 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 380024 : loss=0.353 | is TP: ✅ /dev/random
+2026-02-01 14:58:47 - -> Malicious node 381102 : loss=0.636 | is TP: ✅ /var/log/salt/minion
+2026-02-01 14:58:47 - -> Malicious node 211776 : loss=0.203 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 26254  : loss=0.496 | is TP: ✅ 128.55.12.73:80->81.49.200.166:44623
+2026-02-01 14:58:47 - -> Malicious node 26277  : loss=0.463 | is TP: ✅ 128.55.12.73:80->81.49.200.166:43530
+2026-02-01 14:58:47 - -> Malicious node 26281  : loss=0.643 | is TP: ✅ 128.55.12.73:38265->200.36.109.214:80
+2026-02-01 14:58:47 - -> Malicious node 26318  : loss=3.584 | is TP: ✅ 128.55.12.73:19857->139.123.0.113:80
+2026-02-01 14:58:47 - -> Malicious node 26357  : loss=1.669 | is TP: ✅ 128.55.12.73:17330->61.167.39.128:80
+2026-02-01 14:58:47 - -> Malicious node 228725 : loss=0.460 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 418674 : loss=0.033 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 1219519: loss=3.515 | is TP: ✅ /tmp/vUgefal
+2026-02-01 14:58:47 - -> Malicious node 336472 : loss=1.132 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 337550 : loss=1.385 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 140956 : loss=0.528 | is TP: ✅ 128.55.12.73:80->25.159.96.207:45203
+2026-02-01 14:58:47 - -> Malicious node 140957 : loss=0.626 | is TP: ✅ 128.55.12.73:46517->76.56.184.25:80
+2026-02-01 14:58:47 - -> Malicious node 140960 : loss=1.393 | is TP: ✅ 128.55.12.73:12680->155.162.39.48:80
+2026-02-01 14:58:47 - -> Malicious node 354877 : loss=0.010 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 354933 : loss=0.595 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 354935 : loss=0.744 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 354938 : loss=0.516 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 354940 : loss=0.457 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 354975 : loss=0.230 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 355056 : loss=0.231 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 2442623: loss=3.327 | is TP: ✅ /tmp/tmux-1002
+2026-02-01 14:58:47 - -> Malicious node 2442683: loss=1.685 | is TP: ✅ /var/cache/salt/minion/proc/20180412180113291397
+2026-02-01 14:58:47 - -> Malicious node 2444455: loss=3.274 | is TP: ✅ /tmp/minions
+2026-02-01 14:58:47 - -> Malicious node 141147 : loss=0.960 | is TP: ✅ 128.55.12.73:60746->53.158.101.118:80
+2026-02-01 14:58:47 - -> Malicious node 141183 : loss=3.288 | is TP: ✅ 128.55.12.73:39242->53.158.101.118:80
+2026-02-01 14:58:47 - -> Malicious node 355176 : loss=0.485 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355247 : loss=0.500 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355316 : loss=1.911 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355357 : loss=2.223 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355439 : loss=0.093 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 355447 : loss=0.132 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 2445298: loss=3.703 | is TP: ✅ /tmp/font
+2026-02-01 14:58:47 - -> Malicious node 2445651: loss=3.654 | is TP: ✅ /tmp/XIM
+2026-02-01 14:58:47 - -> Malicious node 2446308: loss=1.662 | is TP: ✅ /var/log/netlog
+2026-02-01 14:58:47 - -> Malicious node 2446677: loss=1.671 | is TP: ✅ /var/log/sendmail
+2026-02-01 14:58:47 - -> Malicious node 141285 : loss=2.595 | is TP: ✅ 128.55.12.73:34345->192.113.144.28:80
+2026-02-01 14:58:47 - -> Malicious node 355470 : loss=0.214 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 355502 : loss=0.550 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355507 : loss=0.533 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355535 : loss=0.470 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355572 : loss=0.372 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355640 : loss=0.329 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355641 : loss=0.453 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 355657 : loss=0.503 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 2446982: loss=1.736 | is TP: ✅ /tmp/main
+2026-02-01 14:58:47 - -> Malicious node 2447478: loss=1.780 | is TP: ✅ /tmp/test
+2026-02-01 14:58:47 - -> Malicious node 356868 : loss=0.370 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 147459 : loss=0.435 | is TP: ✅ 128.55.12.73:80->25.159.96.207:58625
+2026-02-01 14:58:47 - -> Malicious node 147460 : loss=0.890 | is TP: ✅ 128.55.12.73:49722->76.56.184.25:80
+2026-02-01 14:58:47 - -> Malicious node 147461 : loss=1.254 | is TP: ✅ 128.55.12.73:27115->155.162.39.48:80
+2026-02-01 14:58:47 - -> Malicious node 147515 : loss=1.896 | is TP: ✅ 128.55.12.73:63341->53.158.101.118:80
+2026-02-01 14:58:47 - -> Malicious node 370873 : loss=0.068 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 370875 : loss=0.139 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 370876 : loss=0.368 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 370896 : loss=0.068 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 370898 : loss=0.134 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 370899 : loss=0.394 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 370903 : loss=0.038 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 370904 : loss=0.223 | is TP: ❌ None
+2026-02-01 14:58:47 - -> Malicious node 370961 : loss=1.904 | is TP: ✅ None
+2026-02-01 14:58:47 - -> Malicious node 2609543: loss=3.736 | is TP: ✅ /tmp/pEja72mA
+2026-02-01 14:58:47 - -> Malicious node 2609587: loss=0.124 | is TP: ❌ /usr/home/user/eraseme
+2026-02-01 14:58:47 - -> Malicious node 2609590: loss=1.375 | is TP: ✅ /usr/home/user/eraseme/index.html
+2026-02-01 14:58:47 - Saving figures to /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/...
+2026-02-01 14:58:51 - TPs per attack:
+2026-02-01 14:58:51 - attack 1: 34
+2026-02-01 14:58:51 - attack 0: 7
+2026-02-01 14:58:51 - attack 2: 13
+2026-02-01 14:58:58 - [@model_epoch_11] - Stats
+2026-02-01 14:58:58 - precision: 0.00085
+2026-02-01 14:58:58 - recall: 0.76471
+2026-02-01 14:58:58 - fpr: 0.2183136
+2026-02-01 14:58:58 - fscore: 0.00169
+2026-02-01 14:58:58 - ap: 0.00433
+2026-02-01 14:58:58 - accuracy: 0.78168
+2026-02-01 14:58:58 - balanced_acc: 0.7732
+2026-02-01 14:58:58 - auc: 0.86409
+2026-02-01 14:58:58 - lr(+): 3.50279
+2026-02-01 14:58:58 - dor: 11.63684
+2026-02-01 14:58:58 - mcc: 0.02055
+2026-02-01 14:58:58 - tp: 52
+2026-02-01 14:58:58 - fp: 61459
+2026-02-01 14:58:58 - tn: 220058
+2026-02-01 14:58:58 - fn: 16
+2026-02-01 14:58:58 - fp_in_malicious_tw_ratio: 0.024
+2026-02-01 14:58:58 - percent_detected_attacks: 1.0
+2026-02-01 14:58:58 - fps_if_all_attacks_detected: 274
+2026-02-01 14:58:58 - tps_if_all_attacks_detected: 3
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading media/images/scores_img_14_bd5925eafc31a4d37f24.png; uploading media/images/adp_img_14_4af111b18c832bb71bf0.png; uploading media/images/discrim_img_14_58a0e74d6b716aa2df31.png; uploading neat_scores_model_epoch_11.svg; uploading output.log (+ 1 more)
+wandb: uploading media/images/scores_img_14_bd5925eafc31a4d37f24.png; uploading media/images/adp_img_14_4af111b18c832bb71bf0.png; uploading media/images/discrim_img_14_58a0e74d6b716aa2df31.png; uploading neat_scores_model_epoch_11.svg; uploading output.log (+ 2 more)
+wandb: uploading media/images/scores_img_14_bd5925eafc31a4d37f24.png; uploading media/images/adp_img_14_4af111b18c832bb71bf0.png; uploading media/images/discrim_img_14_58a0e74d6b716aa2df31.png; uploading neat_scores_model_epoch_11.svg; uploading output.log (+ 3 more)
+wandb: uploading neat_scores_model_epoch_11.svg; uploading output.log; uploading config.yaml; uploading history steps 14-16, summary, console lines 875-917
+wandb: uploading history steps 14-16, summary, console lines 875-917
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:            accuracy █▄▁▅▆▆▆▆
+wandb:           adp_score ▁▆▄▄▄▇██
+wandb:                  ap ▁▂▄▅▅▆██
+wandb:                 auc ▁▂▄▇▇▇██
+wandb:        balanced_acc ▂▃▁▂▅▇██
+wandb: discrim_score_att_0 ▁▃██████
+wandb: discrim_score_att_1 ▁▅▅▃▆███
+wandb: discrim_score_att_2 ▁▅▅▃▅▅██
+wandb:    discrim_tp_att_0 ▁▁▁▁▁▁▁▁
+wandb:    discrim_tp_att_1 ▁▁▁▁▁▁▁▁
+wandb:                 +40 ...
+wandb: 
+wandb: Run summary:
+wandb:            accuracy 0.78168
+wandb:           adp_score 0.027
+wandb:                  ap 0.00433
+wandb:                 auc 0.86409
+wandb:        balanced_acc 0.7732
+wandb: discrim_score_att_0 -0.0599
+wandb: discrim_score_att_1 -0.0301
+wandb: discrim_score_att_2 -0.0219
+wandb:    discrim_tp_att_0 0
+wandb:    discrim_tp_att_1 0
+wandb:                 +42 ...
+wandb: 
+wandb: 🚀 View run CADETS_E3_nodlink_seed42_tw15_thrnodlink at: https://wandb.ai/1971438035-harbin-institute-of-technology/PIDSMaker/runs/rtvtkpk2
+wandb: ⭐️ View project at: https://wandb.ai/1971438035-harbin-institute-of-technology/PIDSMaker
+wandb: Synced 5 W&B file(s), 21 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20260201_144631-rtvtkpk2/logs
+2026-02-01 14:58:58 - precision_if_all_attacks_detected: 0.010830324909747252
+2026-02-01 14:58:58 - recall_if_all_attacks_detected: 0.03999999999999947
+2026-02-01 14:58:58 - adp_score: 0.027
+2026-02-01 14:58:58 - discrim_score_att_0: -0.0599
+2026-02-01 14:58:58 - discrim_score_att_1: -0.0301
+2026-02-01 14:58:58 - discrim_score_att_2: -0.0219
+2026-02-01 14:58:58 - discrimination: -0.0373
+2026-02-01 14:58:58 - discrim_tp_att_0: 0
+2026-02-01 14:58:58 - discrim_tp_att_1: 0
+2026-02-01 14:58:58 - discrim_tp_att_2: 0
+2026-02-01 14:58:58 - discrim_tp_att_sum: 0
+2026-02-01 14:58:58 - scores_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/scores_model_epoch_11.pkl
+2026-02-01 14:58:58 - neat_scores_img_file: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3/precision_recall_dir/neat_scores_model_epoch_11.svg
+Task done: /home/artifacts/detection/evaluation/2b47b4f9bd22dbd82d5915eea8201a78174a9e48568586595bbda8ef9bcea2a8/CADETS_E3
+
+2026-02-01 14:58:58 - ============================================================
+2026-02-01 14:58:58 - Run finished.
+2026-02-01 14:58:58 - ============================================================

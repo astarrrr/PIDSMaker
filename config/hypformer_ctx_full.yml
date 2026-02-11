@@ -1,0 +1,20 @@
+_include_yml: hypformer
+
+preprocessing:
+  build_graphs:
+    # Expand temporal context from 15 min -> 30 min.
+    time_window_size: 30.0
+
+detection:
+  graph_preprocessing:
+    intra_graph_batching:
+      # Keep edge batching but increase per-batch context.
+      used_methods: edges
+      edges:
+        intra_graph_batch_size: 4096
+
+  gnn_training:
+    encoder:
+      hypformer:
+        # Keep full attention; switch to hypformer_ctx_linear if OOM.
+        attention_type: full

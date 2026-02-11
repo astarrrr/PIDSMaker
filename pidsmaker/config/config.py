@@ -391,6 +391,7 @@ ENCODERS_CFG = {
         "attention_type": Arg(str, vals=OR(["full", "linear_focused"])),
         "power_k": Arg(int),
         "trans_heads_concat": Arg(bool),
+        "use_edge_index_mask": Arg(bool),
     },
     "sum_aggregation": {},
     "rcaid_gat": {},

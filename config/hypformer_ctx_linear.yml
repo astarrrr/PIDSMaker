@@ -1,0 +1,8 @@
+_include_yml: hypformer_ctx_full
+
+detection:
+  gnn_training:
+    encoder:
+      hypformer:
+        # OOM-safe variant for larger windows/batches.
+        attention_type: linear_focused

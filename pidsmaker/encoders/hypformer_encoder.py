@@ -26,6 +26,7 @@ class HypformerEncoder(nn.Module):
         attention_type,
         power_k,
         trans_heads_concat,
+        use_edge_index_mask,
         graph_reindexer,
         x_is_tuple,
         device,
@@ -33,6 +34,8 @@ class HypformerEncoder(nn.Module):
         super().__init__()
         self.graph_reindexer = graph_reindexer
         self.x_is_tuple = x_is_tuple
+        self.use_edge_index_mask = use_edge_index_mask
+        self.attention_type = attention_type
 
         args = SimpleNamespace(
             k_in=k_in,
@@ -59,6 +62,14 @@ class HypformerEncoder(nn.Module):
             args=args,
         )
 
+    @staticmethod
+    def _build_attention_mask(edge_index, num_nodes, device):
+        mask = torch.zeros((num_nodes, num_nodes), dtype=torch.bool, device=device)
+        if edge_index is not None and edge_index.numel() > 0:
+            mask[edge_index[0], edge_index[1]] = True
+        mask.fill_diagonal_(True)
+        return mask
+
     def _resolve_x(self, x, x_src, x_dst, edge_index):
         if x is None:
             if edge_index is None or x_src is None or x_dst is None:
@@ -73,5 +84,12 @@ class HypformerEncoder(nn.Module):
 
     def forward(self, x=None, x_src=None, x_dst=None, edge_index=None, **kwargs):
         x = self._resolve_x(x, x_src, x_dst, edge_index)
-        h = self.model(x)
+        attention_mask = None
+        if self.use_edge_index_mask:
+            if self.attention_type != "full":
+                raise ValueError("Edge-index attention masks require attention_type='full'.")
+            if edge_index is None:
+                raise ValueError("Edge-index attention masks require edge_index.")
+            attention_mask = self._build_attention_mask(edge_index, x.size(0), x.device)
+        h = self.model(x, attention_mask=attention_mask)
         return {"h": h}
