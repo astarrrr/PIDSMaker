@@ -1,0 +1,30 @@
+# =========================
+# HypFormer Ctx (Linear) tuned config
+# Dataset: OPTC_H051
+# =========================
+
+preprocessing:
+  build_graphs:
+    # Keep context variant behavior (larger temporal context).
+    time_window_size: 30.0
+
+featurization:
+  feat_training:
+    emb_dim: 128
+
+detection:
+  graph_preprocessing:
+    intra_graph_batching:
+      used_methods: edges
+      edges:
+        # Keep context variant behavior (larger intra-graph batch).
+        intra_graph_batch_size: 4096
+
+  gnn_training:
+    lr: 0.0003
+    node_hid_dim: 64
+    node_out_dim: 128
+    encoder:
+      dropout: 0.4
+      hypformer:
+        attention_type: linear_focused
