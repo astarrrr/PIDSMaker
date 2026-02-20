@@ -1,6 +1,9 @@
 _include_yml: hypformer_ctx_full
 
 detection:
+  graph_preprocessing:
+        intra_graph_batching:
+          used_methods: none
   gnn_training:
     encoder:
       hypformer:
