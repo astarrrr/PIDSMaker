@@ -93,7 +93,7 @@ detection:
         k_in: 1.0
         k_out: 1.0
         decoder_type: hyp
-        add_positional_encoding: False
+        add_positional_encoding: True
 
 
     # === 训练目标（与 Orthrus 对齐）===
