@@ -7,7 +7,7 @@ preprocessing:
     used_method: default
     use_all_files: True
     mimicry_edge_num: 0
-    time_window_size: 15.0        # 基础时间窗（不是 tuned 最优）
+    time_window_size: 99999999.0        # 基础时间窗（不是 tuned 最优）
     use_hashed_label: False
     fuse_edge: True
     node_label_features:

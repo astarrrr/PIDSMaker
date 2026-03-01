@@ -5,7 +5,7 @@
 
 preprocessing:
   build_graphs:
-    time_window_size: 3.0
+    time_window_size: 99999999.0
     # 比 Orthrus (5.0) 更短
     # 避免双曲注意力跨太长时间造成过平滑
 
